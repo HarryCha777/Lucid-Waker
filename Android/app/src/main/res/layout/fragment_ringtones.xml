@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_alarm"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/ringtonesRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="50dp">
+
+            <RadioButton
+                android:id="@+id/punkyRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Punky"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/happyRockRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Happy Rock"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/creativeMindsRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Creative Minds"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/extremeActionRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Extreme Action"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/dubStepRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Dub Step"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/fadeRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Fade"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/forceRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Force"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/cloud9RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Cloud 9"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/invincibleRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Invincible"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/weirddreamRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Weird Dream"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/catRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Cat"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/dogRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Dog"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/rainRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Rain"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/meditationRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Meditation"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/whiteNoiseRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="White Noise"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/isochronicToneRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Isochronic Tone"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/binauralBeatsRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Binaural Beats"
+                android:textSize="26dp" />
+
+        </RadioGroup>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

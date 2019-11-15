@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lucid Waker</string>
+    <string name="ringtones">Ringtones</string>
+    <string name="my_music">My Music</string>
+
+    <string name="about">&#160;&#160;&#160;&#160;About</string> <!-- spaces at beginning for space -->
+    <string name="faq">&#160;&#160;&#160;&#160;FAQ</string>
+    <string name="resources">&#160;&#160;&#160;&#160;Resources</string>
+    <string name="credits">&#160;&#160;&#160;&#160;Credits</string>
+
+</resources>

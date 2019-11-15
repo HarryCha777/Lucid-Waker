@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.harry.lucidwaker">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeNoActionBar">
+        <service
+            android:name=".MyBackgroundService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".AlarmSetActivity" />
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".ResourcesActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".CreditsActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".FaqActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".AlarmActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".SoundActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".VibrationActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppThemeWithActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

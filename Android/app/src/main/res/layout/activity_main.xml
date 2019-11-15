@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_main"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scrollViewConstraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_main">
+
+                <TextView
+                    android:id="@+id/countdownTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="In ?? Hours and ?? Minutes"
+                    android:textColor="#FFFFFF"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="8dp"
+                    android:timePickerMode="spinner"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/countdownTextView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/alarmConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/alarmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="180dp"
+                        android:text="Alarm"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/alarmTopDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarmTextView" />
+
+                    <Button
+                        android:id="@+id/alarmButton"
+                        android:layout_width="350dp"
+                        android:layout_height="60dp"
+                        android:alpha=".3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarmTopDividerView" />
+
+                    <ImageView
+                        android:id="@+id/alarmImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarmButton"
+                        app:layout_constraintStart_toStartOf="@+id/alarmButton"
+                        app:layout_constraintTop_toTopOf="@id/alarmTopDividerView"
+                        app:srcCompat="@drawable/alarm" />
+
+                    <TextView
+                        android:id="@+id/alarmNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:text="Punky"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarmButton"
+                        app:layout_constraintEnd_toEndOf="@+id/alarmButton"
+                        app:layout_constraintStart_toEndOf="@+id/alarmImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/alarmTopDividerView" />
+
+                    <View
+                        android:id="@+id/alarmBottomDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarmButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/autoOffConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/autoOffTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="280dp"
+                        android:text="Auto-Off"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/autoOffInfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/autoOffTopDividerView"
+                        app:layout_constraintStart_toEndOf="@id/autoOffTextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <View
+                        android:id="@+id/autoOffTopDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/autoOffTextView" />
+
+                    <Button
+                        android:id="@+id/autoOffButton"
+                        android:layout_width="350dp"
+                        android:layout_height="60dp"
+                        android:alpha=".3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOffTopDividerView" />
+
+                    <ImageView
+                        android:id="@+id/autoOffImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/autoOffButton"
+                        app:layout_constraintStart_toStartOf="@+id/autoOffButton"
+                        app:layout_constraintTop_toTopOf="@id/autoOffTopDividerView"
+                        app:srcCompat="@drawable/auto_off" />
+
+                    <TextView
+                        android:id="@+id/autoOffNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:text="10 Sec"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/autoOffButton"
+                        app:layout_constraintEnd_toEndOf="@+id/autoOffButton"
+                        app:layout_constraintStart_toEndOf="@+id/autoOffImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOffTopDividerView" />
+
+                    <View
+                        android:id="@+id/autoOffBottomDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOffButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toneConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/toneTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="380dp"
+                        android:text="Tone"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/toneInfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/silentButton"
+                        app:layout_constraintStart_toEndOf="@+id/toneTextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <Button
+                        android:id="@+id/silentButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/tone_button_left"
+                        android:text="Silent"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toStartOf="@+id/isochronicButton"
+                        app:layout_constraintTop_toBottomOf="@id/toneTextView" />
+
+                    <Button
+                        android:id="@+id/isochronicButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/tone_button_middle"
+                        android:text="Isochronic"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toneTextView" />
+
+                    <Button
+                        android:id="@+id/binauralButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/tone_button_right"
+                        android:text="Binaural"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toEndOf="@+id/isochronicButton"
+                        app:layout_constraintTop_toBottomOf="@+id/toneTextView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/modeConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/modeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="460dp"
+                        android:text="Mode"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/modeInfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/fildButton"
+                        app:layout_constraintStart_toEndOf="@+id/modeTextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <Button
+                        android:id="@+id/fildButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/mode_button_left"
+                        android:text="FILD"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toStartOf="@+id/chainingButton"
+                        app:layout_constraintTop_toBottomOf="@+id/modeTextView" />
+
+                    <Button
+                        android:id="@+id/chainingButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/mode_button_middle"
+                        android:text="Chaining"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/modeTextView" />
+
+                    <Button
+                        android:id="@+id/rausisButton"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/mode_button_right"
+                        android:text="Rausis"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toEndOf="@+id/chainingButton"
+                        app:layout_constraintTop_toBottomOf="@+id/modeTextView" />
+
+                    <Space
+                        android:id="@+id/modeSpace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fildButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/waitConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/waitTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="545dp"
+                        android:text="Wait"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/waitInfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/waitTopDividerView"
+                        app:layout_constraintStart_toEndOf="@+id/waitTextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <View
+                        android:id="@+id/waitTopDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/waitTextView" />
+
+                    <Button
+                        android:id="@+id/waitButton"
+                        android:layout_width="350dp"
+                        android:layout_height="60dp"
+                        android:alpha=".3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/waitTopDividerView" />
+
+                    <ImageView
+                        android:id="@+id/waitImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/waitButton"
+                        app:layout_constraintStart_toStartOf="@+id/waitButton"
+                        app:layout_constraintTop_toBottomOf="@+id/waitTopDividerView"
+                        app:srcCompat="@drawable/wait" />
+
+                    <TextView
+                        android:id="@+id/waitNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:text="20 Min"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/waitButton"
+                        app:layout_constraintEnd_toEndOf="@+id/waitButton"
+                        app:layout_constraintStart_toEndOf="@+id/waitImageView"
+                        app:layout_constraintTop_toTopOf="@+id/waitButton" />
+
+                    <View
+                        android:id="@+id/waitBottomDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/waitButton" />
+
+                    <Space
+                        android:id="@+id/waitSpace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/waitButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/alarm2ConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/alarm2TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="650dp"
+                        android:text="Second Alarm"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/alarm2InfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/alarm2TopDividerView"
+                        app:layout_constraintStart_toEndOf="@id/alarm2TextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <View
+                        android:id="@+id/alarm2TopDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarm2TextView" />
+
+                    <Button
+                        android:id="@+id/alarm2Button"
+                        android:layout_width="350dp"
+                        android:layout_height="60dp"
+                        android:alpha=".3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarm2TopDividerView" />
+
+                    <ImageView
+                        android:id="@+id/alarm2ImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarm2Button"
+                        app:layout_constraintStart_toStartOf="@+id/alarm2Button"
+                        app:layout_constraintTop_toTopOf="@id/alarm2TopDividerView"
+                        app:srcCompat="@drawable/alarm" />
+
+                    <TextView
+                        android:id="@+id/alarm2NameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:text="Punky"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarm2Button"
+                        app:layout_constraintEnd_toEndOf="@+id/alarm2Button"
+                        app:layout_constraintStart_toEndOf="@+id/alarm2ImageView"
+                        app:layout_constraintTop_toTopOf="@+id/alarm2Button" />
+
+                    <View
+                        android:id="@+id/alarm2BottomDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alarm2Button" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/autoOff2ConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/autoOff2TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="750dp"
+                        android:text="Second Auto-Off"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/autoOff2InfoImageButton"
+                        android:layout_width="33dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/autoOff2TopDividerView"
+                        app:layout_constraintStart_toEndOf="@id/autoOff2TextView"
+                        app:srcCompat="@drawable/info" />
+
+                    <View
+                        android:id="@+id/autoOff2TopDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/autoOff2TextView" />
+
+                    <Button
+                        android:id="@+id/autoOff2Button"
+                        android:layout_width="350dp"
+                        android:layout_height="60dp"
+                        android:alpha=".3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOff2TopDividerView" />
+
+                    <ImageView
+                        android:id="@+id/autoOff2ImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/autoOff2Button"
+                        app:layout_constraintStart_toStartOf="@+id/autoOff2Button"
+                        app:layout_constraintTop_toTopOf="@id/autoOff2TopDividerView"
+                        app:srcCompat="@drawable/auto_off" />
+
+                    <TextView
+                        android:id="@+id/autoOff2NameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:text="10 Sec"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toTopOf="@+id/autoOff2BottomDividerView"
+                        app:layout_constraintEnd_toEndOf="@+id/autoOff2Button"
+                        app:layout_constraintStart_toEndOf="@+id/autoOff2ImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOff2TopDividerView" />
+
+                    <View
+                        android:id="@+id/autoOff2BottomDividerView"
+                        android:layout_width="335dp"
+                        android:layout_height="2dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/autoOff2Button" />
+
+                    <Space
+                        android:id="@+id/autoOff2Space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/autoOff2Button" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/setButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_button_orange"
+                    android:text="Set !"
+                    android:textAllCaps="false"
+                    android:textColor="#00FF00"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/durationPopUpConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <View
+                android:id="@+id/durationPopUpBackgroundView"
+                android:layout_width="320dp"
+                android:layout_height="350dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/gradient_popup"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/durationPopUpIconImageView"
+                android:layout_width="35dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/durationPopUpBackgroundView" />
+
+            <TextView
+                android:id="@+id/durationPopUpTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="25dp"
+                android:text="(2nd) Auto-Off / Wait Duration"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/durationPopUpBackgroundView" />
+
+            <NumberPicker
+                android:id="@+id/durationPopUpNumberPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginLeft="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintStart_toStartOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/durationPopUpBackgroundView" />
+
+            <TextView
+                android:id="@+id/durationPopUpUnitTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:text="Min / Sec"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintStart_toEndOf="@+id/durationPopUpNumberPicker"
+                app:layout_constraintTop_toTopOf="@+id/durationPopUpBackgroundView" />
+
+            <TextView
+                android:id="@+id/durationPopUpCancelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="@android:string/cancel"
+                android:textColor="#FFA500"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintStart_toStartOf="@+id/durationPopUpBackgroundView" />
+
+            <TextView
+                android:id="@+id/durationPopUpSaveTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="Save"
+                android:textColor="#00FF00"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/durationPopUpBackgroundView"
+                app:layout_constraintEnd_toEndOf="@+id/durationPopUpBackgroundView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoPopUpConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <View
+                android:id="@+id/infoPopUpBackgroundView"
+                android:layout_width="320dp"
+                android:layout_height="410dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/gradient_popup"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/infoPopUpIconImageView"
+                android:layout_width="35dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/infoPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/infoPopUpBackgroundView" />
+
+            <TextView
+                android:id="@+id/infoPopUpTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:text="(2nd) Auto-Off / (Chaining / Rausis) Wait"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/infoPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/infoPopUpBackgroundView" />
+
+            <ScrollView
+                android:id="@+id/infoPopUpMessageScrollView"
+                android:layout_width="310dp"
+                android:layout_height="290dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/infoPopUpBackgroundView">
+
+                <TextView
+                    android:id="@+id/infoPopUpMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:autoLink="web"
+                    android:textColorLink="#00EAFF"
+                    android:text="Info message."
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/infoPopUpDoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="Done"
+                android:textColor="#00FF00"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/infoPopUpBackgroundView"
+                app:layout_constraintEnd_toEndOf="@+id/infoPopUpBackgroundView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/nav_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
