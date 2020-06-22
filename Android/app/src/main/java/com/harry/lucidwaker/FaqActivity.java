@@ -42,11 +42,9 @@ public class FaqActivity extends AppCompatActivity {
                 "So yes, this app is absolutely effective for me personally to lucid dream.\n\n" +
                 "Q: What did you use to make this app?\n" +
                 "A: I used Java in Android Studio to make this app.\n\n" +
-                "Q: Are you planning on building an iOS version of the app?\n" +
-                "A: I currently do not own a Mac or an iPhone to develop and test the app, " +
-                "but I am planning to figure out a way to gain access to them and build an iOS version of the app.\n\n" +
                 "Q: How can I contact you in private?\n" +
-                "A: For any questions or suggestions, please reach out to me at lucidwakerapp@gmail.com.";
+                "A: For any questions or suggestions, please reach out to me at lucidwakerapp@gmail.com. " +
+                "And I would appreciate it if you clarify in your email that you use Android, not iOS.";
         contentTextView.setText(content);
 
         backTextView.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +64,6 @@ public class FaqActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         App.currActivity = "Main";
-        startActivity(new Intent(FaqActivity.this, MainActivity.class));
+        finish();
     }
 }

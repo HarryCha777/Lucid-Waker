@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.util.Pair;
 import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +27,11 @@ import com.karumi.dexter.listener.PermissionRequest;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SoundActivity extends AppCompatActivity {
 
@@ -45,7 +51,7 @@ public class SoundActivity extends AppCompatActivity {
 
     AudioManager audioManager;
     static MediaPlayer alarm;
-    ArrayList<File> myMusicList;
+    ArrayList<File> myMusicFileList;
 
     void logVars() {
         Log.d("TAG", "MyMusicSelected: " + myMusicSelected + "   " +
@@ -115,14 +121,14 @@ public class SoundActivity extends AppCompatActivity {
             myMusicSelected = App.isMyMusic1;
 
             audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            audioManager.setStreamVolume(AudioManager.STREAM_ALARM, App.volume1, 0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, App.volume1, 0);
         } else {
             ringtonesID = App.ringtones2ID;
             myMusicID = App.myMusic2ID;
             myMusicSelected = App.isMyMusic2;
 
             audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            audioManager.setStreamVolume(AudioManager.STREAM_ALARM, App.volume2, 0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, App.volume2, 0);
         }
 
         ringtonesRadioGroup = findViewById(R.id.ringtonesRadioGroup);
@@ -198,10 +204,16 @@ public class SoundActivity extends AppCompatActivity {
 
     void listMyMusic() {
         if (!myMusicListed) {
-            myMusicList = getMyMusicList(Environment.getExternalStorageDirectory());
-            for (int i = 0; i < myMusicList.size(); i++) {
+            myMusicFileList = getMyMusicList(Environment.getExternalStorageDirectory());
+            Collections.sort(myMusicFileList, new Comparator<File>() {
+                @Override
+                public int compare(File file1, File file2) {
+                    return file1.getName().compareTo(file2.getName());
+                }
+            });
+            for (int i = 0; i < myMusicFileList.size(); i++) {
                 RadioButton myMusicRadioButton = new RadioButton(this);
-                myMusicRadioButton.setText(myMusicList.get(i).getName().replace(".mp3", "").replace(".wav", ""));
+                myMusicRadioButton.setText(myMusicFileList.get(i).getName().replace(".mp3", "").replace(".wav", ""));
                 myMusicRadioButton.setTextSize(26);
                 myMusicRadioButton.setPadding(20, 30, 0, 30);
                 myMusicRadioButton.setId(i);
@@ -232,7 +244,7 @@ public class SoundActivity extends AppCompatActivity {
             try {
                 RadioButton myMusicRadioButton = myMusicRadioGroup.findViewById(myMusicID);
                 int index = myMusicRadioGroup.indexOfChild(myMusicRadioButton);
-                String uriString = myMusicList.get(index).toString();
+                String uriString = myMusicFileList.get(index).toString();
 
                 // update Uri Strings
                 if (!App.isAlarm2)
@@ -255,7 +267,7 @@ public class SoundActivity extends AppCompatActivity {
             }
         }
 
-        alarm.setAudioStreamType(AudioManager.STREAM_ALARM);
+        alarm.setAudioStreamType(AudioManager.STREAM_MUSIC);
         alarm.setLooping(true);
         try { // if not prepared
             alarm.prepareAsync();

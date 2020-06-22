@@ -71,6 +71,30 @@
 		8F44680D242F17D000C2FF08 /* extreme_action_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DD242F17D000C2FF08 /* extreme_action_5.mp3 */; };
 		8F44680E242F17D000C2FF08 /* punky_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DE242F17D000C2FF08 /* punky_5.mp3 */; };
 		8F44680F242F17D000C2FF08 /* rain_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DF242F17D000C2FF08 /* rain_5.mp3 */; };
+		8F4D5B822468B05E00CDC942 /* new_beginning_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B7E2468B05E00CDC942 /* new_beginning_1.mp3 */; };
+		8F4D5B832468B05E00CDC942 /* rumble_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B7F2468B05E00CDC942 /* rumble_1.mp3 */; };
+		8F4D5B842468B05E00CDC942 /* ukulele_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B802468B05E00CDC942 /* ukulele_1.mp3 */; };
+		8F4D5B852468B05E00CDC942 /* summer_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B812468B05E00CDC942 /* summer_1.mp3 */; };
+		8F4D5B8A2468B06B00CDC942 /* rumble_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B862468B06A00CDC942 /* rumble_3.mp3 */; };
+		8F4D5B8B2468B06B00CDC942 /* new_beginning_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B872468B06B00CDC942 /* new_beginning_3.mp3 */; };
+		8F4D5B8C2468B06B00CDC942 /* ukulele_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B882468B06B00CDC942 /* ukulele_3.mp3 */; };
+		8F4D5B8D2468B06B00CDC942 /* summer_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B892468B06B00CDC942 /* summer_3.mp3 */; };
+		8F4D5B922468B07800CDC942 /* summer_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B8E2468B07800CDC942 /* summer_5.mp3 */; };
+		8F4D5B932468B07800CDC942 /* rumble_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B8F2468B07800CDC942 /* rumble_5.mp3 */; };
+		8F4D5B942468B07800CDC942 /* ukulele_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B902468B07800CDC942 /* ukulele_5.mp3 */; };
+		8F4D5B952468B07800CDC942 /* new_beginning_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B912468B07800CDC942 /* new_beginning_5.mp3 */; };
+		8F4D5B9A2468B08500CDC942 /* summer_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B962468B08400CDC942 /* summer_10.mp3 */; };
+		8F4D5B9B2468B08500CDC942 /* new_beginning_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B972468B08500CDC942 /* new_beginning_10.mp3 */; };
+		8F4D5B9C2468B08500CDC942 /* rumble_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B982468B08500CDC942 /* rumble_10.mp3 */; };
+		8F4D5B9D2468B08500CDC942 /* ukulele_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B992468B08500CDC942 /* ukulele_10.mp3 */; };
+		8F4D5BA22468B09100CDC942 /* rumble_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B9E2468B09100CDC942 /* rumble_15.mp3 */; };
+		8F4D5BA32468B09100CDC942 /* new_beginning_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5B9F2468B09100CDC942 /* new_beginning_15.mp3 */; };
+		8F4D5BA42468B09100CDC942 /* summer_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA02468B09100CDC942 /* summer_15.mp3 */; };
+		8F4D5BA52468B09100CDC942 /* ukulele_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA12468B09100CDC942 /* ukulele_15.mp3 */; };
+		8F4D5BAA2468B09E00CDC942 /* summer_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA62468B09E00CDC942 /* summer_30.mp3 */; };
+		8F4D5BAB2468B09E00CDC942 /* new_beginning_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA72468B09E00CDC942 /* new_beginning_30.mp3 */; };
+		8F4D5BAC2468B09E00CDC942 /* rumble_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA82468B09E00CDC942 /* rumble_30.mp3 */; };
+		8F4D5BAD2468B09E00CDC942 /* ukulele_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D5BA92468B09E00CDC942 /* ukulele_30.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +185,30 @@
 		8F4467DD242F17D000C2FF08 /* extreme_action_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_5.mp3; sourceTree = "<group>"; };
 		8F4467DE242F17D000C2FF08 /* punky_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_5.mp3; sourceTree = "<group>"; };
 		8F4467DF242F17D000C2FF08 /* rain_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_5.mp3; sourceTree = "<group>"; };
+		8F4D5B7E2468B05E00CDC942 /* new_beginning_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_1.mp3; sourceTree = "<group>"; };
+		8F4D5B7F2468B05E00CDC942 /* rumble_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_1.mp3; sourceTree = "<group>"; };
+		8F4D5B802468B05E00CDC942 /* ukulele_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_1.mp3; sourceTree = "<group>"; };
+		8F4D5B812468B05E00CDC942 /* summer_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_1.mp3; sourceTree = "<group>"; };
+		8F4D5B862468B06A00CDC942 /* rumble_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_3.mp3; sourceTree = "<group>"; };
+		8F4D5B872468B06B00CDC942 /* new_beginning_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_3.mp3; sourceTree = "<group>"; };
+		8F4D5B882468B06B00CDC942 /* ukulele_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_3.mp3; sourceTree = "<group>"; };
+		8F4D5B892468B06B00CDC942 /* summer_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_3.mp3; sourceTree = "<group>"; };
+		8F4D5B8E2468B07800CDC942 /* summer_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_5.mp3; sourceTree = "<group>"; };
+		8F4D5B8F2468B07800CDC942 /* rumble_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_5.mp3; sourceTree = "<group>"; };
+		8F4D5B902468B07800CDC942 /* ukulele_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_5.mp3; sourceTree = "<group>"; };
+		8F4D5B912468B07800CDC942 /* new_beginning_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_5.mp3; sourceTree = "<group>"; };
+		8F4D5B962468B08400CDC942 /* summer_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_10.mp3; sourceTree = "<group>"; };
+		8F4D5B972468B08500CDC942 /* new_beginning_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_10.mp3; sourceTree = "<group>"; };
+		8F4D5B982468B08500CDC942 /* rumble_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_10.mp3; sourceTree = "<group>"; };
+		8F4D5B992468B08500CDC942 /* ukulele_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_10.mp3; sourceTree = "<group>"; };
+		8F4D5B9E2468B09100CDC942 /* rumble_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_15.mp3; sourceTree = "<group>"; };
+		8F4D5B9F2468B09100CDC942 /* new_beginning_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_15.mp3; sourceTree = "<group>"; };
+		8F4D5BA02468B09100CDC942 /* summer_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_15.mp3; sourceTree = "<group>"; };
+		8F4D5BA12468B09100CDC942 /* ukulele_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_15.mp3; sourceTree = "<group>"; };
+		8F4D5BA62468B09E00CDC942 /* summer_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = summer_30.mp3; sourceTree = "<group>"; };
+		8F4D5BA72468B09E00CDC942 /* new_beginning_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = new_beginning_30.mp3; sourceTree = "<group>"; };
+		8F4D5BA82468B09E00CDC942 /* rumble_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble_30.mp3; sourceTree = "<group>"; };
+		8F4D5BA92468B09E00CDC942 /* ukulele_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ukulele_30.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,8 +261,8 @@
 			children = (
 				8F446769242F171600C2FF08 /* AppDelegate.swift */,
 				8F44676B242F171600C2FF08 /* SceneDelegate.swift */,
-				8F44679C242F172B00C2FF08 /* AppView.swift */,
 				8F44679E242F174D00C2FF08 /* Settings.swift */,
+				8F44679C242F172B00C2FF08 /* AppView.swift */,
 				8F446770242F171600C2FF08 /* ContentView.swift */,
 				8F4467A0242F176D00C2FF08 /* SoundView.swift */,
 				8F4467A2242F178100C2FF08 /* AlarmSetView.swift */,
@@ -265,6 +313,10 @@
 		8F4467AA242F17D000C2FF08 /* 3 Seconds */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5B872468B06B00CDC942 /* new_beginning_3.mp3 */,
+				8F4D5B862468B06A00CDC942 /* rumble_3.mp3 */,
+				8F4D5B892468B06B00CDC942 /* summer_3.mp3 */,
+				8F4D5B882468B06B00CDC942 /* ukulele_3.mp3 */,
 				8F4467AB242F17D000C2FF08 /* happy_rock_3.mp3 */,
 				8F4467AC242F17D000C2FF08 /* meditation_3.mp3 */,
 				8F4467AD242F17D000C2FF08 /* binaural_beats_3.mp3 */,
@@ -280,6 +332,10 @@
 		8F4467B3242F17D000C2FF08 /* 15 Seconds */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5B9F2468B09100CDC942 /* new_beginning_15.mp3 */,
+				8F4D5B9E2468B09100CDC942 /* rumble_15.mp3 */,
+				8F4D5BA02468B09100CDC942 /* summer_15.mp3 */,
+				8F4D5BA12468B09100CDC942 /* ukulele_15.mp3 */,
 				8F4467B4242F17D000C2FF08 /* binaural_beats_15.mp3 */,
 				8F4467B5242F17D000C2FF08 /* dub_step_15.mp3 */,
 				8F4467B6242F17D000C2FF08 /* happy_rock_15.mp3 */,
@@ -295,6 +351,10 @@
 		8F4467BC242F17D000C2FF08 /* 30 Seconds */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5BA72468B09E00CDC942 /* new_beginning_30.mp3 */,
+				8F4D5BA82468B09E00CDC942 /* rumble_30.mp3 */,
+				8F4D5BA62468B09E00CDC942 /* summer_30.mp3 */,
+				8F4D5BA92468B09E00CDC942 /* ukulele_30.mp3 */,
 				8F4467BD242F17D000C2FF08 /* punky_30.mp3 */,
 				8F4467BE242F17D000C2FF08 /* extreme_action_30.mp3 */,
 				8F4467BF242F17D000C2FF08 /* creative_minds_30.mp3 */,
@@ -310,6 +370,10 @@
 		8F4467C5242F17D000C2FF08 /* 10 Seconds */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5B972468B08500CDC942 /* new_beginning_10.mp3 */,
+				8F4D5B982468B08500CDC942 /* rumble_10.mp3 */,
+				8F4D5B962468B08400CDC942 /* summer_10.mp3 */,
+				8F4D5B992468B08500CDC942 /* ukulele_10.mp3 */,
 				8F4467C6242F17D000C2FF08 /* binaural_beats_10.mp3 */,
 				8F4467C7242F17D000C2FF08 /* happy_rock_10.mp3 */,
 				8F4467C8242F17D000C2FF08 /* dub_step_10.mp3 */,
@@ -325,6 +389,10 @@
 		8F4467CE242F17D000C2FF08 /* 1 Second */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5B7E2468B05E00CDC942 /* new_beginning_1.mp3 */,
+				8F4D5B7F2468B05E00CDC942 /* rumble_1.mp3 */,
+				8F4D5B812468B05E00CDC942 /* summer_1.mp3 */,
+				8F4D5B802468B05E00CDC942 /* ukulele_1.mp3 */,
 				8F4467CF242F17D000C2FF08 /* happy_rock_1.mp3 */,
 				8F4467D0242F17D000C2FF08 /* meditation_1.mp3 */,
 				8F4467D1242F17D000C2FF08 /* creative_minds_1.mp3 */,
@@ -340,6 +408,10 @@
 		8F4467D7242F17D000C2FF08 /* 5 Seconds */ = {
 			isa = PBXGroup;
 			children = (
+				8F4D5B912468B07800CDC942 /* new_beginning_5.mp3 */,
+				8F4D5B8F2468B07800CDC942 /* rumble_5.mp3 */,
+				8F4D5B8E2468B07800CDC942 /* summer_5.mp3 */,
+				8F4D5B902468B07800CDC942 /* ukulele_5.mp3 */,
 				8F4467D8242F17D000C2FF08 /* meditation_5.mp3 */,
 				8F4467D9242F17D000C2FF08 /* happy_rock_5.mp3 */,
 				8F4467DA242F17D000C2FF08 /* binaural_beats_5.mp3 */,
@@ -458,11 +530,19 @@
 			files = (
 				8F44680E242F17D000C2FF08 /* punky_5.mp3 in Resources */,
 				8F4467E6242F17D000C2FF08 /* dub_step_3.mp3 in Resources */,
+				8F4D5B952468B07800CDC942 /* new_beginning_5.mp3 in Resources */,
+				8F4D5B8C2468B06B00CDC942 /* ukulele_3.mp3 in Resources */,
 				8F446803242F17D000C2FF08 /* binaural_beats_1.mp3 in Resources */,
+				8F4D5BAD2468B09E00CDC942 /* ukulele_30.mp3 in Resources */,
+				8F4D5B8A2468B06B00CDC942 /* rumble_3.mp3 in Resources */,
 				8F4467F9242F17D000C2FF08 /* happy_rock_10.mp3 in Resources */,
 				8F4467E7242F17D000C2FF08 /* rain_3.mp3 in Resources */,
+				8F4D5B922468B07800CDC942 /* summer_5.mp3 in Resources */,
+				8F4D5BA42468B09100CDC942 /* summer_15.mp3 in Resources */,
 				8F4467ED242F17D000C2FF08 /* creative_minds_15.mp3 in Resources */,
 				8F4467F0242F17D000C2FF08 /* punky_30.mp3 in Resources */,
+				8F4D5B852468B05E00CDC942 /* summer_1.mp3 in Resources */,
+				8F4D5B9C2468B08500CDC942 /* rumble_10.mp3 in Resources */,
 				8F44680C242F17D000C2FF08 /* dub_step_5.mp3 in Resources */,
 				8F4467EC242F17D000C2FF08 /* meditation_15.mp3 in Resources */,
 				8F4467E0242F17D000C2FF08 /* happy_rock_3.mp3 in Resources */,
@@ -471,9 +551,13 @@
 				8F446806242F17D000C2FF08 /* dub_step_1.mp3 in Resources */,
 				8F4467EB242F17D000C2FF08 /* rain_15.mp3 in Resources */,
 				8F446776242F171700C2FF08 /* Preview Assets.xcassets in Resources */,
+				8F4D5B822468B05E00CDC942 /* new_beginning_1.mp3 in Resources */,
 				8F4467F5242F17D000C2FF08 /* happy_rock_30.mp3 in Resources */,
 				8F44680B242F17D000C2FF08 /* creative_minds_5.mp3 in Resources */,
+				8F4D5B832468B05E00CDC942 /* rumble_1.mp3 in Resources */,
+				8F4D5BAC2468B09E00CDC942 /* rumble_30.mp3 in Resources */,
 				8F4467FF242F17D000C2FF08 /* extreme_action_10.mp3 in Resources */,
+				8F4D5B8D2468B06B00CDC942 /* summer_3.mp3 in Resources */,
 				8F4467FB242F17D000C2FF08 /* creative_minds_10.mp3 in Resources */,
 				8F446801242F17D000C2FF08 /* meditation_1.mp3 in Resources */,
 				8F4467E4242F17D000C2FF08 /* extreme_action_3.mp3 in Resources */,
@@ -483,30 +567,42 @@
 				8F446773242F171700C2FF08 /* Assets.xcassets in Resources */,
 				8F4467EA242F17D000C2FF08 /* happy_rock_15.mp3 in Resources */,
 				8F4467F2242F17D000C2FF08 /* creative_minds_30.mp3 in Resources */,
+				8F4D5B9D2468B08500CDC942 /* ukulele_10.mp3 in Resources */,
 				8F4467F4242F17D000C2FF08 /* meditation_30.mp3 in Resources */,
+				8F4D5B9A2468B08500CDC942 /* summer_10.mp3 in Resources */,
 				8F4467F1242F17D000C2FF08 /* extreme_action_30.mp3 in Resources */,
+				8F4D5B932468B07800CDC942 /* rumble_5.mp3 in Resources */,
 				8F4467E9242F17D000C2FF08 /* dub_step_15.mp3 in Resources */,
 				8F446807242F17D000C2FF08 /* rain_1.mp3 in Resources */,
 				8F446804242F17D000C2FF08 /* punky_1.mp3 in Resources */,
 				8F4467F8242F17D000C2FF08 /* binaural_beats_10.mp3 in Resources */,
+				8F4D5BAA2468B09E00CDC942 /* summer_30.mp3 in Resources */,
 				8F4467FD242F17D000C2FF08 /* rain_10.mp3 in Resources */,
 				8F4467EF242F17D000C2FF08 /* punky_15.mp3 in Resources */,
 				8F446809242F17D000C2FF08 /* happy_rock_5.mp3 in Resources */,
 				8F4467F7242F17D000C2FF08 /* binaural_beats_30.mp3 in Resources */,
 				8F4467E8242F17D000C2FF08 /* binaural_beats_15.mp3 in Resources */,
+				8F4D5B842468B05E00CDC942 /* ukulele_1.mp3 in Resources */,
 				8F446808242F17D000C2FF08 /* meditation_5.mp3 in Resources */,
+				8F4D5B8B2468B06B00CDC942 /* new_beginning_3.mp3 in Resources */,
 				8F4467F3242F17D000C2FF08 /* rain_30.mp3 in Resources */,
+				8F4D5BA52468B09100CDC942 /* ukulele_15.mp3 in Resources */,
 				8F4467FE242F17D000C2FF08 /* punky_10.mp3 in Resources */,
+				8F4D5BA32468B09100CDC942 /* new_beginning_15.mp3 in Resources */,
 				8F4467E2242F17D000C2FF08 /* binaural_beats_3.mp3 in Resources */,
 				8F446802242F17D000C2FF08 /* creative_minds_1.mp3 in Resources */,
 				8F446800242F17D000C2FF08 /* happy_rock_1.mp3 in Resources */,
+				8F4D5B942468B07800CDC942 /* ukulele_5.mp3 in Resources */,
 				8F4467F6242F17D000C2FF08 /* dub_step_30.mp3 in Resources */,
 				8F4467FA242F17D000C2FF08 /* dub_step_10.mp3 in Resources */,
+				8F4D5BAB2468B09E00CDC942 /* new_beginning_30.mp3 in Resources */,
+				8F4D5B9B2468B08500CDC942 /* new_beginning_10.mp3 in Resources */,
 				8F4467FC242F17D000C2FF08 /* meditation_10.mp3 in Resources */,
 				8F446805242F17D000C2FF08 /* extreme_action_1.mp3 in Resources */,
 				8F4467E5242F17D000C2FF08 /* punky_3.mp3 in Resources */,
 				8F4467E1242F17D000C2FF08 /* meditation_3.mp3 in Resources */,
 				8F44680D242F17D000C2FF08 /* extreme_action_5.mp3 in Resources */,
+				8F4D5BA22468B09100CDC942 /* rumble_15.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +804,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Lucid Waker/Preview Content\"";
 				DEVELOPMENT_TEAM = 9P4X6V9RQ5;
 				ENABLE_PREVIEWS = YES;
@@ -717,6 +813,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrycha.lucidwakeralarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -731,7 +828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Lucid Waker/Preview Content\"";
 				DEVELOPMENT_TEAM = 9P4X6V9RQ5;
 				ENABLE_PREVIEWS = YES;
@@ -740,6 +837,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrycha.lucidwakeralarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

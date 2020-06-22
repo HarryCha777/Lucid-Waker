@@ -69,11 +69,11 @@ public class AlarmActivity extends AppCompatActivity {
                                     handleSoundOff();
 
                                     audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                                    volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM));
+                                    volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
                                     volumeSeekBar.setProgress(volume);
 
                                     alarm = new MediaPlayer();
-                                    alarm.setAudioStreamType(AudioManager.STREAM_ALARM);
+                                    alarm.setAudioStreamType(AudioManager.STREAM_MUSIC);
                                     alarm.setLooping(true);
 
                                     if (!App.isAlarm2 && App.isMyMusic1) {
@@ -177,8 +177,8 @@ public class AlarmActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (audioManager != null) {
-                    volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM));
-                    audioManager.setStreamVolume(AudioManager.STREAM_ALARM, progress, 0);
+                    volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0);
                 }
             }
         });

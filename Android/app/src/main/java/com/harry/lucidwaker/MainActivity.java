@@ -1,7 +1,6 @@
 package com.harry.lucidwaker;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -9,13 +8,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.content.IntentSender;
-import android.graphics.Rect;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,17 +25,14 @@ import android.widget.NumberPicker;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.InstallState;
-import com.google.android.play.core.install.InstallStateUpdatedListener;
 import com.google.android.play.core.install.model.AppUpdateType;
-import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
     ImageButton autoOffInfoImageButton, toneInfoImageButton, modeInfoImageButton, waitInfoImageButton,
             alarm2InfoImageButton, autoOff2InfoImageButton;
     ImageView durationPopUpIconImageView, infoPopUpIconImageView;
-    ConstraintLayout scrollViewConstraintLayout, waitConstraintLayout, alarm2ConstraintLayout, autoOff2ConstraintLayout,
+    ConstraintLayout waitConstraintLayout, alarm2ConstraintLayout, autoOff2ConstraintLayout,
             durationPopUpConstraintLayout, infoPopUpConstraintLayout;
     View durationPopUpBackgroundView, infoPopUpBackgroundView;
-    ScrollView infoPopUpMessageScrollView;
+    ScrollView mainScrollView, infoPopUpMessageScrollView;
 
     private AppUpdateManager appUpdateManager;
 
@@ -66,24 +65,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        appUpdateManager
-                .getAppUpdateInfo()
-                .addOnSuccessListener(
-                        appUpdateInfo -> {
-                            if (appUpdateInfo.updateAvailability()
-                                    == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                                // If an in-app update is already running, resume the update.
-                                try {
-                                    appUpdateManager.startUpdateFlowForResult(
-                                            appUpdateInfo,
-                                            AppUpdateType.IMMEDIATE,
-                                            this,
-                                            RESULT_OK);
-                                } catch (IntentSender.SendIntentException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
+        checkUpdateOnResume();
     }
 
     @Override
@@ -91,30 +73,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // check and install any updates
-        // see Michael Dougan's answer in https://stackoverflow.com/questions/55939853/how-to-work-with-androids-in-app-update-api
-        appUpdateManager = AppUpdateManagerFactory.create(this);
-        appUpdateManager
-                .getAppUpdateInfo()
-                .addOnSuccessListener(
-                        appUpdateInfo -> {
-                            // Checks that the platform will allow the specified type of update.
-                            if ((appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE)
-                                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                                // Request the update.
-                                try {
-                                    appUpdateManager.startUpdateFlowForResult(
-                                            appUpdateInfo,
-                                            AppUpdateType.IMMEDIATE,
-                                            this,
-                                            RESULT_OK);
-                                } catch (IntentSender.SendIntentException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-
-        scrollViewConstraintLayout = findViewById(R.id.scrollViewConstraintLayout);
+        mainScrollView = findViewById(R.id.mainScrollView);
         countdownTextView = findViewById(R.id.countdownTextView);
         alarmNameTextView = findViewById(R.id.alarmNameTextView);
         autoOffNameTextView = findViewById(R.id.autoOffNameTextView);
@@ -145,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
         waitTextView = findViewById(R.id.waitTextView);
         setButton = findViewById(R.id.setButton);
 
+        Button transparentOutsideDurationPopUpTouchTopButton = findViewById(R.id.transparentOutsideDurationPopUpTouchTopButton);
+        Button transparentOutsideDurationPopUpTouchBottomButton = findViewById(R.id.transparentOutsideDurationPopUpTouchBottomButton);
+        Button transparentOutsideDurationPopUpTouchLeftButton = findViewById(R.id.transparentOutsideDurationPopUpTouchLeftButton);
+        Button transparentOutsideDurationPopUpTouchRightButton = findViewById(R.id.transparentOutsideDurationPopUpTouchRightButton);
         durationPopUpBackgroundView = findViewById(R.id.durationPopUpBackgroundView);
         durationPopUpIconImageView = findViewById(R.id.durationPopUpIconImageView);
         durationPopUpTitleTextView = findViewById(R.id.durationPopUpTitleTextView);
@@ -154,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
         durationPopUpSaveTextView = findViewById(R.id.durationPopUpSaveTextView);
         durationPopUpConstraintLayout = findViewById(R.id.durationPopUpConstraintLayout);
 
+        Button transparentOutsideInfoPopUpTouchTopButton = findViewById(R.id.transparentOutsideInfoPopUpTouchTopButton);
+        Button transparentOutsideInfoPopUpTouchBottomButton = findViewById(R.id.transparentOutsideInfoPopUpTouchBottomButton);
+        Button transparentOutsideInfoPopUpTouchLeftButton = findViewById(R.id.transparentOutsideInfoPopUpTouchLeftButton);
+        Button transparentOutsideInfoPopUpTouchRightButton = findViewById(R.id.transparentOutsideInfoPopUpTouchRightButton);
         infoPopUpBackgroundView = findViewById(R.id.infoPopUpBackgroundView);
         infoPopUpIconImageView = findViewById(R.id.infoPopUpIconImageView);
         infoPopUpTitleTextView = findViewById(R.id.infoPopUpTitleTextView);
@@ -162,14 +129,33 @@ public class MainActivity extends AppCompatActivity {
         infoPopUpDoneTextView = findViewById(R.id.infoPopUpDoneTextView);
         infoPopUpConstraintLayout = findViewById(R.id.infoPopUpConstraintLayout);
 
+        checkUpdateOnCreate();
+
         if (!App.settingsRetrieved) {
             ((App) getApplication()).retrieveSettings();
             App.settingsRetrieved = true;
+
+            // if app is new or updated, reset shared preferences.
+            int appVersionCode = -1;
+            try {
+                PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                appVersionCode = pInfo.versionCode;
+            } catch (PackageManager.NameNotFoundException e) {
+            }
+            if (App.versionCode != appVersionCode) {
+                clearAppData();
+                SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
+                prefs.edit().clear().commit();
+                ((App) getApplication()).retrieveSettings();
+
+                App.versionCode = appVersionCode;
+                ((App) getApplication()).saveSettings();
+            }
         }
 
         setUpNavMenu();
         durationPopUpNumberPicker.setMinValue(1);
-        durationPopUpNumberPicker.setMaxValue(60);
+        durationPopUpNumberPicker.setMaxValue(100);
         durationPopUpConstraintLayout.setVisibility(View.GONE);
         infoPopUpConstraintLayout.setVisibility(View.GONE);
 
@@ -274,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 infoPopUpDoneTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 durationPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 durationPopUpIconImageView.setBackgroundResource(R.drawable.auto_off);
                 durationPopUpTitleTextView.setText("Auto-Off Duration");
@@ -286,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 infoPopUpDoneTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 durationPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 durationPopUpIconImageView.setBackgroundResource(R.drawable.auto_off);
                 durationPopUpTitleTextView.setText("2nd Auto-Off Duration");
@@ -298,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 infoPopUpDoneTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 durationPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 durationPopUpIconImageView.setBackgroundResource(R.drawable.wait);
                 if (App.mode == 2) { // chaining
@@ -310,9 +299,38 @@ public class MainActivity extends AppCompatActivity {
                 App.currDurationPopUp = "Wait";
             }
         });
+        transparentOutsideDurationPopUpTouchBottomButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                durationPopUpCancelTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideDurationPopUpTouchTopButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                durationPopUpCancelTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideDurationPopUpTouchLeftButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                durationPopUpCancelTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideDurationPopUpTouchRightButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                durationPopUpCancelTextView.performClick();
+                return true;
+            }
+        });
         durationPopUpCancelTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                enableDisableViewGroup(mainScrollView, true);
                 durationPopUpConstraintLayout.setVisibility(View.GONE);
                 App.currDurationPopUp = "";
             }
@@ -327,6 +345,7 @@ public class MainActivity extends AppCompatActivity {
                 if (App.currDurationPopUp.equals("Wait"))
                     App.wait = durationPopUpNumberPicker.getValue();
                 App.currDurationPopUp = "";
+                enableDisableViewGroup(mainScrollView, true);
                 durationPopUpConstraintLayout.setVisibility(View.GONE);
             }
         });
@@ -334,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setBackgroundResource(R.drawable.auto_off);
                 infoPopUpTitleTextView.setText("Auto-Off Info");
@@ -350,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setVisibility(View.GONE);
                 infoPopUpTitleTextView.setText("Tone Info");
@@ -365,6 +386,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setVisibility(View.GONE);
                 infoPopUpTitleTextView.setText("Mode Info");
@@ -395,6 +417,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setBackgroundResource(R.drawable.wait);
                 if (App.mode == 2) { // chaining
@@ -419,6 +442,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setBackgroundResource(R.drawable.alarm);
                 infoPopUpTitleTextView.setText("Alarm 2 Info");
@@ -435,6 +459,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 durationPopUpCancelTextView.performClick();
+                enableDisableViewGroup(mainScrollView, false);
                 infoPopUpConstraintLayout.setVisibility(View.VISIBLE);
                 infoPopUpIconImageView.setBackgroundResource(R.drawable.auto_off);
                 infoPopUpTitleTextView.setText("Auto-Off 2 Info");
@@ -447,27 +472,41 @@ public class MainActivity extends AppCompatActivity {
                 App.currInfoPopUp = "AutoOff2";
             }
         });
+        transparentOutsideInfoPopUpTouchBottomButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                infoPopUpDoneTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideInfoPopUpTouchTopButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                infoPopUpDoneTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideInfoPopUpTouchLeftButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                infoPopUpDoneTextView.performClick();
+                return true;
+            }
+        });
+        transparentOutsideInfoPopUpTouchRightButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                infoPopUpDoneTextView.performClick();
+                return true;
+            }
+        });
         infoPopUpDoneTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                enableDisableViewGroup(mainScrollView, true);
                 infoPopUpIconImageView.setVisibility(View.VISIBLE);
                 infoPopUpConstraintLayout.setVisibility(View.GONE);
                 App.currInfoPopUp = "";
-            }
-        });
-        // if tapped outside of pop-up, cancel pop-up.
-        scrollViewConstraintLayout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                int x = (int) motionEvent.getRawX();
-                int y = (int) motionEvent.getRawY();
-                if (!isViewInBounds(infoPopUpBackgroundView, x, y)) {
-                    infoPopUpDoneTextView.performClick();
-                }
-                if (!isViewInBounds(durationPopUpBackgroundView, x, y)) {
-                    durationPopUpCancelTextView.performClick();
-                }
-                return true;
             }
         });
         alarmButton.setOnClickListener(new View.OnClickListener() {
@@ -656,14 +695,90 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    Rect outRect = new Rect();
-    int[] location = new int[2];
+    void enableDisableViewGroup(ViewGroup viewGroup, boolean enabled) {
+        int childCount = viewGroup.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View view = viewGroup.getChildAt(i);
+            view.setEnabled(enabled);
+            if (view instanceof ViewGroup) {
+                enableDisableViewGroup((ViewGroup) view, enabled);
+            }
+        }
+    }
 
-    boolean isViewInBounds(View view, int x, int y) {
-        view.getDrawingRect(outRect);
-        view.getLocationOnScreen(location);
-        outRect.offset(location[0], location[1]);
-        return outRect.contains(x, y);
+    void checkUpdateOnCreate() {
+        // check and install any updates
+        // see Michael Dougan's answer in https://stackoverflow.com/questions/55939853/how-to-work-with-androids-in-app-update-api
+        appUpdateManager = AppUpdateManagerFactory.create(this);
+        appUpdateManager
+                .getAppUpdateInfo()
+                .addOnSuccessListener(
+                        appUpdateInfo -> {
+                            // Checks that the platform will allow the specified type of update.
+                            if ((appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE)
+                                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                                // Request the update.
+                                try {
+                                    appUpdateManager.startUpdateFlowForResult(
+                                            appUpdateInfo,
+                                            AppUpdateType.IMMEDIATE,
+                                            this,
+                                            RESULT_OK);
+                                } catch (IntentSender.SendIntentException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+    }
+
+    void checkUpdateOnResume() {
+        appUpdateManager
+                .getAppUpdateInfo()
+                .addOnSuccessListener(
+                        appUpdateInfo -> {
+                            if (appUpdateInfo.updateAvailability()
+                                    == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                                // If an in-app update is already running, resume the update.
+                                try {
+                                    appUpdateManager.startUpdateFlowForResult(
+                                            appUpdateInfo,
+                                            AppUpdateType.IMMEDIATE,
+                                            this,
+                                            RESULT_OK);
+                                } catch (IntentSender.SendIntentException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+    }
+
+    public void clearAppData() {
+        File cacheDirectory = getCacheDir();
+        File applicationDirectory = new File(cacheDirectory.getParent());
+        if (applicationDirectory.exists()) {
+            String[] fileNames = applicationDirectory.list();
+            for (String fileName : fileNames) {
+                if (!fileName.equals("lib")) {
+                    deleteFile(new File(applicationDirectory, fileName));
+                }
+            }
+        }
+    }
+
+    public static boolean deleteFile(File file) {
+        boolean deletedAll = true;
+        if (file != null) {
+            if (file.isDirectory()) {
+                String[] children = file.list();
+                for (int i = 0; i < children.length; i++) {
+                    deletedAll = deleteFile(new File(file, children[i])) && deletedAll;
+                }
+            } else {
+                deletedAll = file.delete();
+            }
+        }
+
+        return deletedAll;
     }
 
     @Override
@@ -684,4 +799,3 @@ public class MainActivity extends AppCompatActivity {
         // if API level is 15, since finishAffinity() cannot be used, do nothing.
     }
 }
-

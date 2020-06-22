@@ -8,6 +8,9 @@
 
 import UIKit
 import SwiftUI
+import CoreData
+
+var settingsObject = Settings()
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -23,8 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let appView = AppView()
-            .environmentObject(Settings())
-            .edgesIgnoringSafeArea(.top)
+            .environmentObject(settingsObject)
             .environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
@@ -52,8 +54,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        
+        deleteAllCoreData()
+        saveAllCoreData()
     }
-
+    
+    func deleteAllCoreData() {
+        let appDel : AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context : NSManagedObjectContext = appDel.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SettingsEntity")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        let results = try? context.fetch(fetchRequest)
+        for managedObject in results! {
+            if let managedObjectData: NSManagedObject = managedObject as? NSManagedObject {
+                context.delete(managedObjectData)
+            }
+        }
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        try? moc.save()
+    }
+    
+    func saveAllCoreData() {
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let settingsEntity = SettingsEntity(context: moc)
+        settingsEntity.alarmDate = settingsObject.alarmDate
+        settingsEntity.alarmSetCounter = Int16(settingsObject.alarmSetCounter + 1)
+        settingsEntity.autoOffIndex1 = Int16(settingsObject.autoOffIndex1)
+        settingsEntity.autoOffIndex2 = Int16(settingsObject.autoOffIndex2)
+        settingsEntity.firstLaunchDate = settingsObject.firstLaunchDate
+        settingsEntity.isAlarmScheduled = settingsObject.isAlarmScheduled
+        settingsEntity.isAlarmSet = settingsObject.isAlarmSet
+        settingsEntity.modeIndex = Int16(settingsObject.modeIndex)
+        settingsEntity.requestedReview = settingsObject.requestedReview
+        settingsEntity.soundIndex1 = Int16(settingsObject.soundIndex1)
+        settingsEntity.soundIndex2 = Int16(settingsObject.soundIndex2)
+        settingsEntity.waitIndexForChaining = Int16(settingsObject.waitIndexForChaining)
+        settingsEntity.waitIndexForRausis = Int16(settingsObject.waitIndexForRausis)
+        try? moc.save()
+    }
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.

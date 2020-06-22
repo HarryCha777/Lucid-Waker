@@ -68,7 +68,6 @@ struct SoundView: View {
         }) {
             HStack {
                 Text(self.settings.soundList[index])
-                    .foregroundColor(Color.white)
                 Spacer()
                 if index < self.isOn.count && self.isOn[index] {
                     ZStack {
@@ -87,6 +86,7 @@ struct SoundView: View {
                 }
             }
         }
+        .buttonStyle(PlainButtonStyle())
     }
     
     func stopSound() {

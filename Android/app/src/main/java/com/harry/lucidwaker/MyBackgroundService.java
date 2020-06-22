@@ -57,7 +57,7 @@ public class MyBackgroundService extends Service {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         // default volume1 6 (out of 15) for Sleep Help music
-        audioManager.setStreamVolume(AudioManager.STREAM_ALARM, 6, 0);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 6, 0);
 
         super.onCreate();
     }
@@ -120,7 +120,7 @@ public class MyBackgroundService extends Service {
                 } catch (Exception e) {
                 }
 
-                sleepHelp.setAudioStreamType(AudioManager.STREAM_ALARM);
+                sleepHelp.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 sleepHelp.setLooping(true);
                 try { // if not prepared
                     sleepHelp.prepareAsync();
@@ -249,9 +249,9 @@ public class MyBackgroundService extends Service {
 
     void startAlarm(boolean secondAlarm) {
         if (!secondAlarm) {
-            audioManager.setStreamVolume(AudioManager.STREAM_ALARM, App.volume1, 0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, App.volume1, 0);
         } else {
-            audioManager.setStreamVolume(AudioManager.STREAM_ALARM, App.volume2, 0);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, App.volume2, 0);
         }
 
         if (alarm != null) alarm.reset();
@@ -278,7 +278,7 @@ public class MyBackgroundService extends Service {
             }
         } catch (Exception e) {
         }
-        alarm.setAudioStreamType(AudioManager.STREAM_ALARM);
+        alarm.setAudioStreamType(AudioManager.STREAM_MUSIC);
         alarm.setLooping(true);
         try { // if not prepared
             alarm.prepareAsync();
@@ -294,7 +294,7 @@ public class MyBackgroundService extends Service {
     }
 
     void startTone() {
-        audioManager.setStreamVolume(AudioManager.STREAM_ALARM, 6, 0); // default volume1 6 (out of 15)
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0); // default volume1 10 (out of 15)
 
         if (tone != null) tone.reset();
         else tone = new MediaPlayer();
@@ -310,7 +310,7 @@ public class MyBackgroundService extends Service {
             } catch (Exception e) {
             }
         }
-        tone.setAudioStreamType(AudioManager.STREAM_ALARM);
+        tone.setAudioStreamType(AudioManager.STREAM_MUSIC);
         tone.setLooping(true);
         try { // if not prepared
             tone.prepareAsync();

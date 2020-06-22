@@ -674,6 +674,50 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="gone">
 
+            <Button
+                android:id="@+id/transparentOutsideDurationPopUpTouchTopButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toTopOf="@id/durationPopUpBackgroundView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/transparentOutsideDurationPopUpTouchBottomButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/durationPopUpBackgroundView" />
+
+            <Button
+                android:id="@+id/transparentOutsideDurationPopUpTouchLeftButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/durationPopUpBackgroundView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/transparentOutsideDurationPopUpTouchTopButton" />
+
+            <Button
+                android:id="@+id/transparentOutsideDurationPopUpTouchRightButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/durationPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/transparentOutsideDurationPopUpTouchTopButton" />
+
             <View
                 android:id="@+id/durationPopUpBackgroundView"
                 android:layout_width="320dp"
@@ -767,6 +811,50 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="gone">
 
+            <Button
+                android:id="@+id/transparentOutsideInfoPopUpTouchTopButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toTopOf="@id/infoPopUpBackgroundView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/transparentOutsideInfoPopUpTouchBottomButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/infoPopUpBackgroundView" />
+
+            <Button
+                android:id="@+id/transparentOutsideInfoPopUpTouchLeftButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/infoPopUpBackgroundView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/transparentOutsideInfoPopUpTouchTopButton" />
+
+            <Button
+                android:id="@+id/transparentOutsideInfoPopUpTouchRightButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/infoPopUpBackgroundView"
+                app:layout_constraintTop_toTopOf="@+id/transparentOutsideInfoPopUpTouchTopButton" />
+
             <View
                 android:id="@+id/infoPopUpBackgroundView"
                 android:layout_width="320dp"
@@ -821,9 +909,9 @@
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="0dp"
                     android:autoLink="web"
-                    android:textColorLink="#00EAFF"
                     android:text="Info message."
                     android:textColor="#FFFFFF"
+                    android:textColorLink="#00EAFF"
                     android:textSize="20dp" />
             </ScrollView>
 

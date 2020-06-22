@@ -23,7 +23,7 @@ class Settings: ObservableObject {
         }
     }
     
-    @Published var soundList = ["Punky", "Happy Rock", "Extreme Action", "Dub Step", "Rain", "Creative Minds", "Meditation", "Binaural Beats"]
+    @Published var soundList = ["Punky", "Happy Rock", "Extreme Action", "Dub Step", "Rumble", "New Beginning", "Summer", "Ukulele", "Creative Minds", "Rain", "Meditation", "Binaural Beats"]
     @Published var soundIndex1 = 0
     @Published var soundIndex2 = 5
     
@@ -37,7 +37,7 @@ class Settings: ObservableObject {
     @Published var modeList = ["FILD", "Chaining", "Rausis"]
     @Published var modeIndex = 1
     
-    @Published var waitList = ["1 Minute", "5 Minutes", "10 Minutes", "20 Minutes", "30 Minutes", "60 Minutes", "90 Minutes"]
+    @Published var waitList = ["1 Minute", "5 Minutes", "10 Minutes", "20 Minutes", "30 Minutes", "45 Minutes", "60 Minutes", "90 Minutes"]
     @Published var waitIndexForChaining = 5
     @Published var waitIndexForRausis = 2
     

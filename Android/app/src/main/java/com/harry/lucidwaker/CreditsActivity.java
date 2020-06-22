@@ -65,6 +65,6 @@ public class CreditsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         App.currActivity = "Main";
-        startActivity(new Intent(CreditsActivity.this, MainActivity.class));
+        finish();
     }
 }

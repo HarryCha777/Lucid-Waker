@@ -4,8 +4,12 @@ import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
 
+import java.io.File;
 import java.util.Calendar;
 
 public class App extends Application {
@@ -13,6 +17,8 @@ public class App extends Application {
     // because App.varName can be used, which is shorter than ((App) getApplication).varName.
 
     static String currActivity = "Main"; // initial activity
+
+    static int versionCode;
 
     static int setHour, setMin, setDay;
     static String countdownText;
@@ -86,6 +92,10 @@ public class App extends Application {
         if (soundName.equals("Creative Minds")) return R.raw.creative_minds;
         if (soundName.equals("Extreme Action")) return R.raw.extreme_action;
         if (soundName.equals("Dub Step")) return R.raw.dub_step;
+        if (soundName.equals("New Beginning")) return R.raw.new_beginning;
+        if (soundName.equals("Summer")) return R.raw.summer;
+        if (soundName.equals("Ukulele")) return R.raw.ukulele;
+        if (soundName.equals("Rumble")) return R.raw.rumble;
         if (soundName.equals("Fade")) return R.raw.fade;
         if (soundName.equals("Force")) return R.raw.force;
         if (soundName.equals("Cloud 9")) return R.raw.cloud_9;
@@ -103,6 +113,7 @@ public class App extends Application {
 
     void saveSettings() {
         SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putInt("Version Code", versionCode);
         editor.putInt("Set Hour", setHour);
         editor.putInt("Set Min", setMin);
         editor.putInt("Auto Off 1", autoOff1);
@@ -136,7 +147,8 @@ public class App extends Application {
 
     void retrieveSettings() {
         SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
-        setHour = prefs.getInt("Set Hour", 6); // 2nd string is default value
+        versionCode = prefs.getInt("Version Code", 0); // 2nd int is default value
+        setHour = prefs.getInt("Set Hour", 6);
         setMin = prefs.getInt("Set Min", 30);
         autoOff1 = prefs.getInt("Auto Off 1", 15);
         tone = prefs.getInt("Tone", 1);

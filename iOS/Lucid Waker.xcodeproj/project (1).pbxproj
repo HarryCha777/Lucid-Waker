@@ -1,0 +1,892 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F44676A242F171600C2FF08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F446769242F171600C2FF08 /* AppDelegate.swift */; };
+		8F44676C242F171600C2FF08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44676B242F171600C2FF08 /* SceneDelegate.swift */; };
+		8F44676F242F171600C2FF08 /* Lucid_Waker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F44676D242F171600C2FF08 /* Lucid_Waker.xcdatamodeld */; };
+		8F446771242F171600C2FF08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F446770242F171600C2FF08 /* ContentView.swift */; };
+		8F446773242F171700C2FF08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F446772242F171700C2FF08 /* Assets.xcassets */; };
+		8F446776242F171700C2FF08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F446775242F171700C2FF08 /* Preview Assets.xcassets */; };
+		8F446779242F171700C2FF08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F446777242F171700C2FF08 /* LaunchScreen.storyboard */; };
+		8F446784242F171700C2FF08 /* Lucid_WakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F446783242F171700C2FF08 /* Lucid_WakerTests.swift */; };
+		8F44678F242F171700C2FF08 /* Lucid_WakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44678E242F171700C2FF08 /* Lucid_WakerUITests.swift */; };
+		8F44679D242F172B00C2FF08 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44679C242F172B00C2FF08 /* AppView.swift */; };
+		8F44679F242F174D00C2FF08 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44679E242F174D00C2FF08 /* Settings.swift */; };
+		8F4467A1242F176D00C2FF08 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4467A0242F176D00C2FF08 /* SoundView.swift */; };
+		8F4467A3242F178100C2FF08 /* AlarmSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4467A2242F178100C2FF08 /* AlarmSetView.swift */; };
+		8F4467A5242F179000C2FF08 /* FaqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4467A4242F179000C2FF08 /* FaqView.swift */; };
+		8F4467A7242F17A200C2FF08 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4467A6242F17A200C2FF08 /* ResourcesView.swift */; };
+		8F4467A9242F17B100C2FF08 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4467A8242F17B100C2FF08 /* AboutView.swift */; };
+		8F4467E0242F17D000C2FF08 /* happy_rock_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467AB242F17D000C2FF08 /* happy_rock_3.mp3 */; };
+		8F4467E1242F17D000C2FF08 /* meditation_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467AC242F17D000C2FF08 /* meditation_3.mp3 */; };
+		8F4467E2242F17D000C2FF08 /* binaural_beats_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467AD242F17D000C2FF08 /* binaural_beats_3.mp3 */; };
+		8F4467E3242F17D000C2FF08 /* creative_minds_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467AE242F17D000C2FF08 /* creative_minds_3.mp3 */; };
+		8F4467E4242F17D000C2FF08 /* extreme_action_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467AF242F17D000C2FF08 /* extreme_action_3.mp3 */; };
+		8F4467E5242F17D000C2FF08 /* punky_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B0242F17D000C2FF08 /* punky_3.mp3 */; };
+		8F4467E6242F17D000C2FF08 /* dub_step_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B1242F17D000C2FF08 /* dub_step_3.mp3 */; };
+		8F4467E7242F17D000C2FF08 /* rain_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B2242F17D000C2FF08 /* rain_3.mp3 */; };
+		8F4467E8242F17D000C2FF08 /* binaural_beats_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B4242F17D000C2FF08 /* binaural_beats_15.mp3 */; };
+		8F4467E9242F17D000C2FF08 /* dub_step_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B5242F17D000C2FF08 /* dub_step_15.mp3 */; };
+		8F4467EA242F17D000C2FF08 /* happy_rock_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B6242F17D000C2FF08 /* happy_rock_15.mp3 */; };
+		8F4467EB242F17D000C2FF08 /* rain_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B7242F17D000C2FF08 /* rain_15.mp3 */; };
+		8F4467EC242F17D000C2FF08 /* meditation_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B8242F17D000C2FF08 /* meditation_15.mp3 */; };
+		8F4467ED242F17D000C2FF08 /* creative_minds_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467B9242F17D000C2FF08 /* creative_minds_15.mp3 */; };
+		8F4467EE242F17D000C2FF08 /* extreme_action_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467BA242F17D000C2FF08 /* extreme_action_15.mp3 */; };
+		8F4467EF242F17D000C2FF08 /* punky_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467BB242F17D000C2FF08 /* punky_15.mp3 */; };
+		8F4467F0242F17D000C2FF08 /* punky_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467BD242F17D000C2FF08 /* punky_30.mp3 */; };
+		8F4467F1242F17D000C2FF08 /* extreme_action_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467BE242F17D000C2FF08 /* extreme_action_30.mp3 */; };
+		8F4467F2242F17D000C2FF08 /* creative_minds_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467BF242F17D000C2FF08 /* creative_minds_30.mp3 */; };
+		8F4467F3242F17D000C2FF08 /* rain_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C0242F17D000C2FF08 /* rain_30.mp3 */; };
+		8F4467F4242F17D000C2FF08 /* meditation_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C1242F17D000C2FF08 /* meditation_30.mp3 */; };
+		8F4467F5242F17D000C2FF08 /* happy_rock_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C2242F17D000C2FF08 /* happy_rock_30.mp3 */; };
+		8F4467F6242F17D000C2FF08 /* dub_step_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C3242F17D000C2FF08 /* dub_step_30.mp3 */; };
+		8F4467F7242F17D000C2FF08 /* binaural_beats_30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C4242F17D000C2FF08 /* binaural_beats_30.mp3 */; };
+		8F4467F8242F17D000C2FF08 /* binaural_beats_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C6242F17D000C2FF08 /* binaural_beats_10.mp3 */; };
+		8F4467F9242F17D000C2FF08 /* happy_rock_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C7242F17D000C2FF08 /* happy_rock_10.mp3 */; };
+		8F4467FA242F17D000C2FF08 /* dub_step_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C8242F17D000C2FF08 /* dub_step_10.mp3 */; };
+		8F4467FB242F17D000C2FF08 /* creative_minds_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467C9242F17D000C2FF08 /* creative_minds_10.mp3 */; };
+		8F4467FC242F17D000C2FF08 /* meditation_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467CA242F17D000C2FF08 /* meditation_10.mp3 */; };
+		8F4467FD242F17D000C2FF08 /* rain_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467CB242F17D000C2FF08 /* rain_10.mp3 */; };
+		8F4467FE242F17D000C2FF08 /* punky_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467CC242F17D000C2FF08 /* punky_10.mp3 */; };
+		8F4467FF242F17D000C2FF08 /* extreme_action_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467CD242F17D000C2FF08 /* extreme_action_10.mp3 */; };
+		8F446800242F17D000C2FF08 /* happy_rock_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467CF242F17D000C2FF08 /* happy_rock_1.mp3 */; };
+		8F446801242F17D000C2FF08 /* meditation_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D0242F17D000C2FF08 /* meditation_1.mp3 */; };
+		8F446802242F17D000C2FF08 /* creative_minds_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D1242F17D000C2FF08 /* creative_minds_1.mp3 */; };
+		8F446803242F17D000C2FF08 /* binaural_beats_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D2242F17D000C2FF08 /* binaural_beats_1.mp3 */; };
+		8F446804242F17D000C2FF08 /* punky_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D3242F17D000C2FF08 /* punky_1.mp3 */; };
+		8F446805242F17D000C2FF08 /* extreme_action_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D4242F17D000C2FF08 /* extreme_action_1.mp3 */; };
+		8F446806242F17D000C2FF08 /* dub_step_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D5242F17D000C2FF08 /* dub_step_1.mp3 */; };
+		8F446807242F17D000C2FF08 /* rain_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D6242F17D000C2FF08 /* rain_1.mp3 */; };
+		8F446808242F17D000C2FF08 /* meditation_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D8242F17D000C2FF08 /* meditation_5.mp3 */; };
+		8F446809242F17D000C2FF08 /* happy_rock_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467D9242F17D000C2FF08 /* happy_rock_5.mp3 */; };
+		8F44680A242F17D000C2FF08 /* binaural_beats_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DA242F17D000C2FF08 /* binaural_beats_5.mp3 */; };
+		8F44680B242F17D000C2FF08 /* creative_minds_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DB242F17D000C2FF08 /* creative_minds_5.mp3 */; };
+		8F44680C242F17D000C2FF08 /* dub_step_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DC242F17D000C2FF08 /* dub_step_5.mp3 */; };
+		8F44680D242F17D000C2FF08 /* extreme_action_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DD242F17D000C2FF08 /* extreme_action_5.mp3 */; };
+		8F44680E242F17D000C2FF08 /* punky_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DE242F17D000C2FF08 /* punky_5.mp3 */; };
+		8F44680F242F17D000C2FF08 /* rain_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F4467DF242F17D000C2FF08 /* rain_5.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F446780242F171700C2FF08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F44675E242F171600C2FF08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F446765242F171600C2FF08;
+			remoteInfo = "Lucid Waker";
+		};
+		8F44678B242F171700C2FF08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F44675E242F171600C2FF08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F446765242F171600C2FF08;
+			remoteInfo = "Lucid Waker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8F446766242F171600C2FF08 /* Lucid Waker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucid Waker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F446769242F171600C2FF08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F44676B242F171600C2FF08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8F44676E242F171600C2FF08 /* Lucid_Waker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lucid_Waker.xcdatamodel; sourceTree = "<group>"; };
+		8F446770242F171600C2FF08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8F446772242F171700C2FF08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F446775242F171700C2FF08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F446778242F171700C2FF08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F44677A242F171700C2FF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F44677F242F171700C2FF08 /* Lucid WakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lucid WakerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F446783242F171700C2FF08 /* Lucid_WakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lucid_WakerTests.swift; sourceTree = "<group>"; };
+		8F446785242F171700C2FF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F44678A242F171700C2FF08 /* Lucid WakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lucid WakerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F44678E242F171700C2FF08 /* Lucid_WakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lucid_WakerUITests.swift; sourceTree = "<group>"; };
+		8F446790242F171700C2FF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F44679C242F172B00C2FF08 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		8F44679E242F174D00C2FF08 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8F4467A0242F176D00C2FF08 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
+		8F4467A2242F178100C2FF08 /* AlarmSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSetView.swift; sourceTree = "<group>"; };
+		8F4467A4242F179000C2FF08 /* FaqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqView.swift; sourceTree = "<group>"; };
+		8F4467A6242F17A200C2FF08 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		8F4467A8242F17B100C2FF08 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		8F4467AB242F17D000C2FF08 /* happy_rock_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_3.mp3; sourceTree = "<group>"; };
+		8F4467AC242F17D000C2FF08 /* meditation_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_3.mp3; sourceTree = "<group>"; };
+		8F4467AD242F17D000C2FF08 /* binaural_beats_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_3.mp3; sourceTree = "<group>"; };
+		8F4467AE242F17D000C2FF08 /* creative_minds_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_3.mp3; sourceTree = "<group>"; };
+		8F4467AF242F17D000C2FF08 /* extreme_action_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_3.mp3; sourceTree = "<group>"; };
+		8F4467B0242F17D000C2FF08 /* punky_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_3.mp3; sourceTree = "<group>"; };
+		8F4467B1242F17D000C2FF08 /* dub_step_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_3.mp3; sourceTree = "<group>"; };
+		8F4467B2242F17D000C2FF08 /* rain_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_3.mp3; sourceTree = "<group>"; };
+		8F4467B4242F17D000C2FF08 /* binaural_beats_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_15.mp3; sourceTree = "<group>"; };
+		8F4467B5242F17D000C2FF08 /* dub_step_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_15.mp3; sourceTree = "<group>"; };
+		8F4467B6242F17D000C2FF08 /* happy_rock_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_15.mp3; sourceTree = "<group>"; };
+		8F4467B7242F17D000C2FF08 /* rain_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_15.mp3; sourceTree = "<group>"; };
+		8F4467B8242F17D000C2FF08 /* meditation_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_15.mp3; sourceTree = "<group>"; };
+		8F4467B9242F17D000C2FF08 /* creative_minds_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_15.mp3; sourceTree = "<group>"; };
+		8F4467BA242F17D000C2FF08 /* extreme_action_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_15.mp3; sourceTree = "<group>"; };
+		8F4467BB242F17D000C2FF08 /* punky_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_15.mp3; sourceTree = "<group>"; };
+		8F4467BD242F17D000C2FF08 /* punky_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_30.mp3; sourceTree = "<group>"; };
+		8F4467BE242F17D000C2FF08 /* extreme_action_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_30.mp3; sourceTree = "<group>"; };
+		8F4467BF242F17D000C2FF08 /* creative_minds_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_30.mp3; sourceTree = "<group>"; };
+		8F4467C0242F17D000C2FF08 /* rain_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_30.mp3; sourceTree = "<group>"; };
+		8F4467C1242F17D000C2FF08 /* meditation_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_30.mp3; sourceTree = "<group>"; };
+		8F4467C2242F17D000C2FF08 /* happy_rock_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_30.mp3; sourceTree = "<group>"; };
+		8F4467C3242F17D000C2FF08 /* dub_step_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_30.mp3; sourceTree = "<group>"; };
+		8F4467C4242F17D000C2FF08 /* binaural_beats_30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_30.mp3; sourceTree = "<group>"; };
+		8F4467C6242F17D000C2FF08 /* binaural_beats_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_10.mp3; sourceTree = "<group>"; };
+		8F4467C7242F17D000C2FF08 /* happy_rock_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_10.mp3; sourceTree = "<group>"; };
+		8F4467C8242F17D000C2FF08 /* dub_step_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_10.mp3; sourceTree = "<group>"; };
+		8F4467C9242F17D000C2FF08 /* creative_minds_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_10.mp3; sourceTree = "<group>"; };
+		8F4467CA242F17D000C2FF08 /* meditation_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_10.mp3; sourceTree = "<group>"; };
+		8F4467CB242F17D000C2FF08 /* rain_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_10.mp3; sourceTree = "<group>"; };
+		8F4467CC242F17D000C2FF08 /* punky_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_10.mp3; sourceTree = "<group>"; };
+		8F4467CD242F17D000C2FF08 /* extreme_action_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_10.mp3; sourceTree = "<group>"; };
+		8F4467CF242F17D000C2FF08 /* happy_rock_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_1.mp3; sourceTree = "<group>"; };
+		8F4467D0242F17D000C2FF08 /* meditation_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_1.mp3; sourceTree = "<group>"; };
+		8F4467D1242F17D000C2FF08 /* creative_minds_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_1.mp3; sourceTree = "<group>"; };
+		8F4467D2242F17D000C2FF08 /* binaural_beats_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_1.mp3; sourceTree = "<group>"; };
+		8F4467D3242F17D000C2FF08 /* punky_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_1.mp3; sourceTree = "<group>"; };
+		8F4467D4242F17D000C2FF08 /* extreme_action_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_1.mp3; sourceTree = "<group>"; };
+		8F4467D5242F17D000C2FF08 /* dub_step_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_1.mp3; sourceTree = "<group>"; };
+		8F4467D6242F17D000C2FF08 /* rain_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_1.mp3; sourceTree = "<group>"; };
+		8F4467D8242F17D000C2FF08 /* meditation_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_5.mp3; sourceTree = "<group>"; };
+		8F4467D9242F17D000C2FF08 /* happy_rock_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy_rock_5.mp3; sourceTree = "<group>"; };
+		8F4467DA242F17D000C2FF08 /* binaural_beats_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = binaural_beats_5.mp3; sourceTree = "<group>"; };
+		8F4467DB242F17D000C2FF08 /* creative_minds_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = creative_minds_5.mp3; sourceTree = "<group>"; };
+		8F4467DC242F17D000C2FF08 /* dub_step_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dub_step_5.mp3; sourceTree = "<group>"; };
+		8F4467DD242F17D000C2FF08 /* extreme_action_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extreme_action_5.mp3; sourceTree = "<group>"; };
+		8F4467DE242F17D000C2FF08 /* punky_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punky_5.mp3; sourceTree = "<group>"; };
+		8F4467DF242F17D000C2FF08 /* rain_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain_5.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F446763242F171600C2FF08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F44677C242F171700C2FF08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F446787242F171700C2FF08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F44675D242F171600C2FF08 = {
+			isa = PBXGroup;
+			children = (
+				8F446768242F171600C2FF08 /* Lucid Waker */,
+				8F446782242F171700C2FF08 /* Lucid WakerTests */,
+				8F44678D242F171700C2FF08 /* Lucid WakerUITests */,
+				8F446767242F171600C2FF08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F446767242F171600C2FF08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F446766242F171600C2FF08 /* Lucid Waker.app */,
+				8F44677F242F171700C2FF08 /* Lucid WakerTests.xctest */,
+				8F44678A242F171700C2FF08 /* Lucid WakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F446768242F171600C2FF08 /* Lucid Waker */ = {
+			isa = PBXGroup;
+			children = (
+				8F446769242F171600C2FF08 /* AppDelegate.swift */,
+				8F44676B242F171600C2FF08 /* SceneDelegate.swift */,
+				8F44679C242F172B00C2FF08 /* AppView.swift */,
+				8F44679E242F174D00C2FF08 /* Settings.swift */,
+				8F446770242F171600C2FF08 /* ContentView.swift */,
+				8F4467A0242F176D00C2FF08 /* SoundView.swift */,
+				8F4467A2242F178100C2FF08 /* AlarmSetView.swift */,
+				8F4467A4242F179000C2FF08 /* FaqView.swift */,
+				8F4467A6242F17A200C2FF08 /* ResourcesView.swift */,
+				8F4467A8242F17B100C2FF08 /* AboutView.swift */,
+				8F4467CE242F17D000C2FF08 /* 1 Second */,
+				8F4467AA242F17D000C2FF08 /* 3 Seconds */,
+				8F4467D7242F17D000C2FF08 /* 5 Seconds */,
+				8F4467C5242F17D000C2FF08 /* 10 Seconds */,
+				8F4467B3242F17D000C2FF08 /* 15 Seconds */,
+				8F4467BC242F17D000C2FF08 /* 30 Seconds */,
+				8F446772242F171700C2FF08 /* Assets.xcassets */,
+				8F446777242F171700C2FF08 /* LaunchScreen.storyboard */,
+				8F44677A242F171700C2FF08 /* Info.plist */,
+				8F44676D242F171600C2FF08 /* Lucid_Waker.xcdatamodeld */,
+				8F446774242F171700C2FF08 /* Preview Content */,
+			);
+			path = "Lucid Waker";
+			sourceTree = "<group>";
+		};
+		8F446774242F171700C2FF08 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8F446775242F171700C2FF08 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8F446782242F171700C2FF08 /* Lucid WakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F446783242F171700C2FF08 /* Lucid_WakerTests.swift */,
+				8F446785242F171700C2FF08 /* Info.plist */,
+			);
+			path = "Lucid WakerTests";
+			sourceTree = "<group>";
+		};
+		8F44678D242F171700C2FF08 /* Lucid WakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F44678E242F171700C2FF08 /* Lucid_WakerUITests.swift */,
+				8F446790242F171700C2FF08 /* Info.plist */,
+			);
+			path = "Lucid WakerUITests";
+			sourceTree = "<group>";
+		};
+		8F4467AA242F17D000C2FF08 /* 3 Seconds */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467AB242F17D000C2FF08 /* happy_rock_3.mp3 */,
+				8F4467AC242F17D000C2FF08 /* meditation_3.mp3 */,
+				8F4467AD242F17D000C2FF08 /* binaural_beats_3.mp3 */,
+				8F4467AE242F17D000C2FF08 /* creative_minds_3.mp3 */,
+				8F4467AF242F17D000C2FF08 /* extreme_action_3.mp3 */,
+				8F4467B0242F17D000C2FF08 /* punky_3.mp3 */,
+				8F4467B1242F17D000C2FF08 /* dub_step_3.mp3 */,
+				8F4467B2242F17D000C2FF08 /* rain_3.mp3 */,
+			);
+			path = "3 Seconds";
+			sourceTree = "<group>";
+		};
+		8F4467B3242F17D000C2FF08 /* 15 Seconds */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467B4242F17D000C2FF08 /* binaural_beats_15.mp3 */,
+				8F4467B5242F17D000C2FF08 /* dub_step_15.mp3 */,
+				8F4467B6242F17D000C2FF08 /* happy_rock_15.mp3 */,
+				8F4467B7242F17D000C2FF08 /* rain_15.mp3 */,
+				8F4467B8242F17D000C2FF08 /* meditation_15.mp3 */,
+				8F4467B9242F17D000C2FF08 /* creative_minds_15.mp3 */,
+				8F4467BA242F17D000C2FF08 /* extreme_action_15.mp3 */,
+				8F4467BB242F17D000C2FF08 /* punky_15.mp3 */,
+			);
+			path = "15 Seconds";
+			sourceTree = "<group>";
+		};
+		8F4467BC242F17D000C2FF08 /* 30 Seconds */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467BD242F17D000C2FF08 /* punky_30.mp3 */,
+				8F4467BE242F17D000C2FF08 /* extreme_action_30.mp3 */,
+				8F4467BF242F17D000C2FF08 /* creative_minds_30.mp3 */,
+				8F4467C0242F17D000C2FF08 /* rain_30.mp3 */,
+				8F4467C1242F17D000C2FF08 /* meditation_30.mp3 */,
+				8F4467C2242F17D000C2FF08 /* happy_rock_30.mp3 */,
+				8F4467C3242F17D000C2FF08 /* dub_step_30.mp3 */,
+				8F4467C4242F17D000C2FF08 /* binaural_beats_30.mp3 */,
+			);
+			path = "30 Seconds";
+			sourceTree = "<group>";
+		};
+		8F4467C5242F17D000C2FF08 /* 10 Seconds */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467C6242F17D000C2FF08 /* binaural_beats_10.mp3 */,
+				8F4467C7242F17D000C2FF08 /* happy_rock_10.mp3 */,
+				8F4467C8242F17D000C2FF08 /* dub_step_10.mp3 */,
+				8F4467C9242F17D000C2FF08 /* creative_minds_10.mp3 */,
+				8F4467CA242F17D000C2FF08 /* meditation_10.mp3 */,
+				8F4467CB242F17D000C2FF08 /* rain_10.mp3 */,
+				8F4467CC242F17D000C2FF08 /* punky_10.mp3 */,
+				8F4467CD242F17D000C2FF08 /* extreme_action_10.mp3 */,
+			);
+			path = "10 Seconds";
+			sourceTree = "<group>";
+		};
+		8F4467CE242F17D000C2FF08 /* 1 Second */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467CF242F17D000C2FF08 /* happy_rock_1.mp3 */,
+				8F4467D0242F17D000C2FF08 /* meditation_1.mp3 */,
+				8F4467D1242F17D000C2FF08 /* creative_minds_1.mp3 */,
+				8F4467D2242F17D000C2FF08 /* binaural_beats_1.mp3 */,
+				8F4467D3242F17D000C2FF08 /* punky_1.mp3 */,
+				8F4467D4242F17D000C2FF08 /* extreme_action_1.mp3 */,
+				8F4467D5242F17D000C2FF08 /* dub_step_1.mp3 */,
+				8F4467D6242F17D000C2FF08 /* rain_1.mp3 */,
+			);
+			path = "1 Second";
+			sourceTree = "<group>";
+		};
+		8F4467D7242F17D000C2FF08 /* 5 Seconds */ = {
+			isa = PBXGroup;
+			children = (
+				8F4467D8242F17D000C2FF08 /* meditation_5.mp3 */,
+				8F4467D9242F17D000C2FF08 /* happy_rock_5.mp3 */,
+				8F4467DA242F17D000C2FF08 /* binaural_beats_5.mp3 */,
+				8F4467DB242F17D000C2FF08 /* creative_minds_5.mp3 */,
+				8F4467DC242F17D000C2FF08 /* dub_step_5.mp3 */,
+				8F4467DD242F17D000C2FF08 /* extreme_action_5.mp3 */,
+				8F4467DE242F17D000C2FF08 /* punky_5.mp3 */,
+				8F4467DF242F17D000C2FF08 /* rain_5.mp3 */,
+			);
+			path = "5 Seconds";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F446765242F171600C2FF08 /* Lucid Waker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F446793242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid Waker" */;
+			buildPhases = (
+				8F446762242F171600C2FF08 /* Sources */,
+				8F446763242F171600C2FF08 /* Frameworks */,
+				8F446764242F171600C2FF08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lucid Waker";
+			productName = "Lucid Waker";
+			productReference = 8F446766242F171600C2FF08 /* Lucid Waker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F44677E242F171700C2FF08 /* Lucid WakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F446796242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid WakerTests" */;
+			buildPhases = (
+				8F44677B242F171700C2FF08 /* Sources */,
+				8F44677C242F171700C2FF08 /* Frameworks */,
+				8F44677D242F171700C2FF08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F446781242F171700C2FF08 /* PBXTargetDependency */,
+			);
+			name = "Lucid WakerTests";
+			productName = "Lucid WakerTests";
+			productReference = 8F44677F242F171700C2FF08 /* Lucid WakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F446789242F171700C2FF08 /* Lucid WakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F446799242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid WakerUITests" */;
+			buildPhases = (
+				8F446786242F171700C2FF08 /* Sources */,
+				8F446787242F171700C2FF08 /* Frameworks */,
+				8F446788242F171700C2FF08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F44678C242F171700C2FF08 /* PBXTargetDependency */,
+			);
+			name = "Lucid WakerUITests";
+			productName = "Lucid WakerUITests";
+			productReference = 8F44678A242F171700C2FF08 /* Lucid WakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F44675E242F171600C2FF08 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Harry Cha";
+				TargetAttributes = {
+					8F446765242F171600C2FF08 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					8F44677E242F171700C2FF08 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 8F446765242F171600C2FF08;
+					};
+					8F446789242F171700C2FF08 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 8F446765242F171600C2FF08;
+					};
+				};
+			};
+			buildConfigurationList = 8F446761242F171600C2FF08 /* Build configuration list for PBXProject "Lucid Waker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F44675D242F171600C2FF08;
+			productRefGroup = 8F446767242F171600C2FF08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F446765242F171600C2FF08 /* Lucid Waker */,
+				8F44677E242F171700C2FF08 /* Lucid WakerTests */,
+				8F446789242F171700C2FF08 /* Lucid WakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F446764242F171600C2FF08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F44680E242F17D000C2FF08 /* punky_5.mp3 in Resources */,
+				8F4467E6242F17D000C2FF08 /* dub_step_3.mp3 in Resources */,
+				8F446803242F17D000C2FF08 /* binaural_beats_1.mp3 in Resources */,
+				8F4467F9242F17D000C2FF08 /* happy_rock_10.mp3 in Resources */,
+				8F4467E7242F17D000C2FF08 /* rain_3.mp3 in Resources */,
+				8F4467ED242F17D000C2FF08 /* creative_minds_15.mp3 in Resources */,
+				8F4467F0242F17D000C2FF08 /* punky_30.mp3 in Resources */,
+				8F44680C242F17D000C2FF08 /* dub_step_5.mp3 in Resources */,
+				8F4467EC242F17D000C2FF08 /* meditation_15.mp3 in Resources */,
+				8F4467E0242F17D000C2FF08 /* happy_rock_3.mp3 in Resources */,
+				8F4467EE242F17D000C2FF08 /* extreme_action_15.mp3 in Resources */,
+				8F446779242F171700C2FF08 /* LaunchScreen.storyboard in Resources */,
+				8F446806242F17D000C2FF08 /* dub_step_1.mp3 in Resources */,
+				8F4467EB242F17D000C2FF08 /* rain_15.mp3 in Resources */,
+				8F446776242F171700C2FF08 /* Preview Assets.xcassets in Resources */,
+				8F4467F5242F17D000C2FF08 /* happy_rock_30.mp3 in Resources */,
+				8F44680B242F17D000C2FF08 /* creative_minds_5.mp3 in Resources */,
+				8F4467FF242F17D000C2FF08 /* extreme_action_10.mp3 in Resources */,
+				8F4467FB242F17D000C2FF08 /* creative_minds_10.mp3 in Resources */,
+				8F446801242F17D000C2FF08 /* meditation_1.mp3 in Resources */,
+				8F4467E4242F17D000C2FF08 /* extreme_action_3.mp3 in Resources */,
+				8F44680A242F17D000C2FF08 /* binaural_beats_5.mp3 in Resources */,
+				8F44680F242F17D000C2FF08 /* rain_5.mp3 in Resources */,
+				8F4467E3242F17D000C2FF08 /* creative_minds_3.mp3 in Resources */,
+				8F446773242F171700C2FF08 /* Assets.xcassets in Resources */,
+				8F4467EA242F17D000C2FF08 /* happy_rock_15.mp3 in Resources */,
+				8F4467F2242F17D000C2FF08 /* creative_minds_30.mp3 in Resources */,
+				8F4467F4242F17D000C2FF08 /* meditation_30.mp3 in Resources */,
+				8F4467F1242F17D000C2FF08 /* extreme_action_30.mp3 in Resources */,
+				8F4467E9242F17D000C2FF08 /* dub_step_15.mp3 in Resources */,
+				8F446807242F17D000C2FF08 /* rain_1.mp3 in Resources */,
+				8F446804242F17D000C2FF08 /* punky_1.mp3 in Resources */,
+				8F4467F8242F17D000C2FF08 /* binaural_beats_10.mp3 in Resources */,
+				8F4467FD242F17D000C2FF08 /* rain_10.mp3 in Resources */,
+				8F4467EF242F17D000C2FF08 /* punky_15.mp3 in Resources */,
+				8F446809242F17D000C2FF08 /* happy_rock_5.mp3 in Resources */,
+				8F4467F7242F17D000C2FF08 /* binaural_beats_30.mp3 in Resources */,
+				8F4467E8242F17D000C2FF08 /* binaural_beats_15.mp3 in Resources */,
+				8F446808242F17D000C2FF08 /* meditation_5.mp3 in Resources */,
+				8F4467F3242F17D000C2FF08 /* rain_30.mp3 in Resources */,
+				8F4467FE242F17D000C2FF08 /* punky_10.mp3 in Resources */,
+				8F4467E2242F17D000C2FF08 /* binaural_beats_3.mp3 in Resources */,
+				8F446802242F17D000C2FF08 /* creative_minds_1.mp3 in Resources */,
+				8F446800242F17D000C2FF08 /* happy_rock_1.mp3 in Resources */,
+				8F4467F6242F17D000C2FF08 /* dub_step_30.mp3 in Resources */,
+				8F4467FA242F17D000C2FF08 /* dub_step_10.mp3 in Resources */,
+				8F4467FC242F17D000C2FF08 /* meditation_10.mp3 in Resources */,
+				8F446805242F17D000C2FF08 /* extreme_action_1.mp3 in Resources */,
+				8F4467E5242F17D000C2FF08 /* punky_3.mp3 in Resources */,
+				8F4467E1242F17D000C2FF08 /* meditation_3.mp3 in Resources */,
+				8F44680D242F17D000C2FF08 /* extreme_action_5.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F44677D242F171700C2FF08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F446788242F171700C2FF08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F446762242F171600C2FF08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F44679F242F174D00C2FF08 /* Settings.swift in Sources */,
+				8F4467A3242F178100C2FF08 /* AlarmSetView.swift in Sources */,
+				8F4467A9242F17B100C2FF08 /* AboutView.swift in Sources */,
+				8F44676A242F171600C2FF08 /* AppDelegate.swift in Sources */,
+				8F4467A5242F179000C2FF08 /* FaqView.swift in Sources */,
+				8F4467A7242F17A200C2FF08 /* ResourcesView.swift in Sources */,
+				8F44676F242F171600C2FF08 /* Lucid_Waker.xcdatamodeld in Sources */,
+				8F4467A1242F176D00C2FF08 /* SoundView.swift in Sources */,
+				8F446771242F171600C2FF08 /* ContentView.swift in Sources */,
+				8F44679D242F172B00C2FF08 /* AppView.swift in Sources */,
+				8F44676C242F171600C2FF08 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F44677B242F171700C2FF08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F446784242F171700C2FF08 /* Lucid_WakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F446786242F171700C2FF08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F44678F242F171700C2FF08 /* Lucid_WakerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F446781242F171700C2FF08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F446765242F171600C2FF08 /* Lucid Waker */;
+			targetProxy = 8F446780242F171700C2FF08 /* PBXContainerItemProxy */;
+		};
+		8F44678C242F171700C2FF08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F446765242F171600C2FF08 /* Lucid Waker */;
+			targetProxy = 8F44678B242F171700C2FF08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F446777242F171700C2FF08 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F446778242F171700C2FF08 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F446791242F171700C2FF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F446792242F171700C2FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F446794242F171700C2FF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_ASSET_PATHS = "\"Lucid Waker/Preview Content\"";
+				DEVELOPMENT_TEAM = 9P4X6V9RQ5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Lucid Waker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrycha.lucidwakeralarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F446795242F171700C2FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_ASSET_PATHS = "\"Lucid Waker/Preview Content\"";
+				DEVELOPMENT_TEAM = 9P4X6V9RQ5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Lucid Waker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrycha.lucidwakeralarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8F446797242F171700C2FF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3866R2799A;
+				INFOPLIST_FILE = "Lucid WakerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrycha.Lucid-WakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lucid Waker.app/Lucid Waker";
+			};
+			name = Debug;
+		};
+		8F446798242F171700C2FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3866R2799A;
+				INFOPLIST_FILE = "Lucid WakerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrycha.Lucid-WakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lucid Waker.app/Lucid Waker";
+			};
+			name = Release;
+		};
+		8F44679A242F171700C2FF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3866R2799A;
+				INFOPLIST_FILE = "Lucid WakerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrycha.Lucid-WakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Lucid Waker";
+			};
+			name = Debug;
+		};
+		8F44679B242F171700C2FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3866R2799A;
+				INFOPLIST_FILE = "Lucid WakerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrycha.Lucid-WakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Lucid Waker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F446761242F171600C2FF08 /* Build configuration list for PBXProject "Lucid Waker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F446791242F171700C2FF08 /* Debug */,
+				8F446792242F171700C2FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F446793242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid Waker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F446794242F171700C2FF08 /* Debug */,
+				8F446795242F171700C2FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F446796242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid WakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F446797242F171700C2FF08 /* Debug */,
+				8F446798242F171700C2FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F446799242F171700C2FF08 /* Build configuration list for PBXNativeTarget "Lucid WakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F44679A242F171700C2FF08 /* Debug */,
+				8F44679B242F171700C2FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8F44676D242F171600C2FF08 /* Lucid_Waker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8F44676E242F171600C2FF08 /* Lucid_Waker.xcdatamodel */,
+			);
+			currentVersion = 8F44676E242F171600C2FF08 /* Lucid_Waker.xcdatamodel */;
+			path = Lucid_Waker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8F44675E242F171600C2FF08 /* Project object */;
+}

@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var settings: Settings
-    @FetchRequest(entity: SettingsEntity.entity(), sortDescriptors: []) var settingsEntityList: FetchedResults<SettingsEntity>
-    @State private var fetchedCoreData = false
 
     @State private var showSoundInfo2 = false
     @State private var showAutoOffInfo1 = false
@@ -42,12 +40,35 @@ struct ContentView: View {
         "In Rausis mode, you need to set it to wait for a time period " +
     "long enough for you to be asleep again yet short enough not to lose your consciousness."
     
+    @State private var firstAlarmTitle = "Congrats, you set your very first alarm!"
+    @State private var firstAlarmMessage = "Please make sure both silent mode and this device's screen are turned off for alarms to work properly!"
+    
+    @State private var requestOnOpeningTitle = "Just a moment please!"
+    @State private var requestOnOpeningMessage = "Does Lucid Waker help you lucid dream?"
+    @State private var requestOnYesTitle = "I am super glad to hear that.   :)"
+    @State private var requestOnYesMessage = "Would you mind rating this app on App Store?"
+    @State private var requestOnNoTitle = "I am so sorry to hear that.   :("
+    @State private var requestOnNoMessage = "Would you mind providing feedback so that I can improve this app for you?"
+    
+    @State private var requestOnOpeningSayYes = "Yes, it does!"
+    @State private var requestOnOpeningSayNo = "Not really."
+    @State private var requestAfterOpeningSayYes = "Sure, take me there!"
+    @State private var requestAfterOpeningSayNo = "No, don't ask again."
+    
+    @State private var alertId: AlertId?
+    private struct AlertId: Identifiable {
+        enum Id {
+            case
+            firstAlarm,
+            requestOnOpening,
+            requestOnYes,
+            requestOnNo
+        }
+        var id: Id
+    }
+    
     var body: some View {
         NavigationView {
-            if settings.isAlarmSet {
-                AlarmSetView().environmentObject(settings)
-            }
-            
             Form {
                 Section(header: Text(settings.timeLeft)) {
                     DatePicker("Please enter a time", selection: $settings.alarmDate, displayedComponents: .hourAndMinute)
@@ -225,20 +246,48 @@ struct ContentView: View {
                 
                 Section {
                     Button(action: {
-                        self.settings.isAlarmSet = true
+                        if self.settings.alarmSetCounter == 0 {
+                            self.alertId = AlertId(id: .firstAlarm)
+                        } else {
+                            self.settings.isAlarmSet = true
+                        }
                         self.settings.alarmSetCounter += 1
                     }) {
                         Text("Set the Alarm !")
+                    }
+                    // show alerts on content view instead of alarm set view
+                    // because app crashes for unknown reason when a pop-up shows up while set alarm time is over approximately 12 hours from now
+                    .alert(item: $alertId) { alert in
+                        switch alert.id {
+                        case .firstAlarm:
+                            return Alert(title: Text(firstAlarmTitle), message: Text(firstAlarmMessage), dismissButton: .default(Text("OK"), action: {
+                                self.settings.isAlarmSet = true
+                            }))
+                        case .requestOnOpening:
+                            return Alert(title: Text(requestOnOpeningTitle), message: Text(requestOnOpeningMessage), primaryButton: .destructive(Text(requestOnOpeningSayNo), action: {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // very short delay is needed
+                                    self.alertId = AlertId(id: .requestOnNo)
+                                }
+                            }), secondaryButton: .default(Text(requestOnOpeningSayYes), action: {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // very short delay is needed
+                                    self.alertId = AlertId(id: .requestOnYes)
+                                }
+                            }))
+                        case .requestOnYes:
+                            return Alert(title: Text(requestOnYesTitle), message: Text(requestOnYesMessage), primaryButton: .default(Text(requestAfterOpeningSayYes), action: {
+                                self.linkToReview()
+                            }), secondaryButton: .destructive(Text(requestAfterOpeningSayNo)))
+                        case .requestOnNo:
+                            return Alert(title: Text(requestOnNoTitle), message: Text(requestOnNoMessage), primaryButton: .default(Text(requestAfterOpeningSayYes), action: {
+                                self.linkToReview()
+                            }), secondaryButton: .destructive(Text(requestAfterOpeningSayNo)))
+                        }
                     }
                 }
             }
             .navigationBarTitle("Lucid Waker")
             .onAppear {
                 UITableView.appearance().separatorStyle = .singleLine // show lines inbetween list items
-                
-                if !self.fetchedCoreData {
-                    self.fetchCoreData()
-                }
 
                 if !self.settings.timeLeftUpdating {
                     self.settings.startUpdatingTimeLeft()
@@ -246,31 +295,33 @@ struct ContentView: View {
                 
                 let soundView = SoundView(settings: self._settings, isSound1: true)
                 soundView.stopSound()
+                
+                self.checkRatePopUp()
             }
         }
         .navigationViewStyle(StackNavigationViewStyle()) // needed so pickers don't jump in position right after nagivation
     }
 
-    func fetchCoreData() {
-        if self.settingsEntityList.count == 0 {
-            return
+    func checkRatePopUp() {
+        // if it's first time asking for review, alarm has been set 4 or more times, and it's been 3 or more days since first launch
+        if !self.settings.requestedReview
+            && self.settings.alarmSetCounter >= 4
+            && Date().timeIntervalSince(self.settings.firstLaunchDate) > 60 * 60 * 24 * 3 {
+            self.settings.requestedReview = true
+            self.alertId = AlertId(id: .requestOnOpening)
         }
+    }
+    
+    func linkToReview() {
+        guard let productURL = URL(string: "https://apps.apple.com/app/id1505570242") else { return }
         
-        let settingsEntity = settingsEntityList[0]
-        self.settings.alarmDate = settingsEntity.alarmDate ?? Date()
-        self.settings.alarmSetCounter = Int(settingsEntity.alarmSetCounter)
-        self.settings.autoOffIndex1 = Int(settingsEntity.autoOffIndex1)
-        self.settings.autoOffIndex2 = Int(settingsEntity.autoOffIndex2)
-        self.settings.firstLaunchDate = settingsEntity.firstLaunchDate ?? Date()
-        self.settings.isAlarmScheduled = settingsEntity.isAlarmScheduled
-        self.settings.isAlarmSet = settingsEntity.isAlarmSet
-        self.settings.modeIndex = Int(settingsEntity.modeIndex)
-        self.settings.requestedReview = settingsEntity.requestedReview
-        self.settings.soundIndex1 = Int(settingsEntity.soundIndex1)
-        self.settings.soundIndex2 = Int(settingsEntity.soundIndex2)
-        self.settings.waitIndexForChaining = Int(settingsEntity.waitIndexForChaining)
-        self.settings.waitIndexForRausis = Int(settingsEntity.waitIndexForRausis)
-        self.fetchedCoreData = true
+        var components = URLComponents(url: productURL, resolvingAgainstBaseURL: false)
+        components?.queryItems = [
+            URLQueryItem(name: "action", value: "write-review")
+        ]
+        
+        guard let writeReviewURL = components?.url else { return }
+        UIApplication.shared.open(writeReviewURL)
     }
 }
 

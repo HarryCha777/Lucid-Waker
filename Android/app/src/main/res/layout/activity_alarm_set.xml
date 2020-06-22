@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_alarm_set"
@@ -123,5 +124,189 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rateAskPopUpConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <View
+            android:id="@+id/rateAskPopUpBackgroundView"
+            android:layout_width="320dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/gradient_popup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rateAskPopUpTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="Does Lucid Waker\nhelp you lucid dream?"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/rateAskPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateAskPopUpBackgroundView"
+            app:layout_constraintTop_toTopOf="@+id/rateAskPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateAskPopUpYesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Yes, it does!"
+            android:textColor="#00FF00"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateAskPopUpBackgroundView"
+            app:layout_constraintEnd_toEndOf="@+id/rateAskPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateAskPopUpNoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Not really."
+            android:textColor="#FFA500"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateAskPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateAskPopUpBackgroundView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rateYesPopUpConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <View
+            android:id="@+id/rateYesPopUpBackgroundView"
+            android:layout_width="320dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/gradient_popup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/rateYesPopUpTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.1"
+            android:text="I am super glad to hear that.   :)\n\nWould you mind rating\nthis app on Play Store?"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintTop_toTopOf="@+id/rateYesPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateYesPopUpYesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="Sure, take me there!"
+            android:textColor="#00FF00"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintEnd_toEndOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateYesPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateYesPopUpNoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="No, don't ask again."
+            android:textColor="#FFA500"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintEnd_toEndOf="@+id/rateYesPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateYesPopUpBackgroundView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rateNoPopUpConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <View
+            android:id="@+id/rateNoPopUpBackgroundView"
+            android:layout_width="320dp"
+            android:layout_height="270dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/gradient_popup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rateNoPopUpTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.1"
+            android:text="I am very sorry to hear that.   :(\n\nWould you mind providing\nfeedback so that I can\nimprove this app for you?"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintTop_toTopOf="@+id/rateNoPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateNoPopUpYesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="Sure, take me there!"
+            android:textColor="#00FF00"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintEnd_toEndOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateNoPopUpBackgroundView" />
+
+        <TextView
+            android:id="@+id/rateNoPopUpNoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="No, don't ask again."
+            android:textColor="#FFA500"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintEnd_toEndOf="@+id/rateNoPopUpBackgroundView"
+            app:layout_constraintStart_toStartOf="@+id/rateNoPopUpBackgroundView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

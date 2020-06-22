@@ -26,6 +26,11 @@ public class ResourcesActivity extends AppCompatActivity {
 
         String content = "The following is a list of lucid dreaming resources that I personally used and recommend.\n" +
                 "Click on each of their links to visit them online.\n\n" +
+                "Exploring the World of Lucid Dreaming\n" +
+                "amazon.com/Exploring-World-Dreaming-Stephen-LaBerge/dp/034537410X\n" +
+                "This is a book written by Stephen LaBerge, a scientist and researcher with PhD from Stanford University, in 1990.\n" +
+                "As this book can be considered the Bible of lucid dreaming, simply reading this book everyday can get its readers into the mindset of lucid dreaming.\n" +
+                "I strongly recommend this book to all lucid dreamers!\n\n" +
                 "How to Lucid\n" +
                 "howtolucid.com\n" +
                 "As a website managed by Stefan, this website is very beginner-friendly and personal.\n" +
@@ -35,12 +40,7 @@ public class ResourcesActivity extends AppCompatActivity {
                 "luciddreamsociety.com\n" +
                 "Lucid Dream Society is an online community run by Merilin, a lucid dream enthusiast.\n" +
                 "It is a home of numerous beneficial suggestions and free educational materials to learn from.\n" +
-                "Therefore, I personally recommend reading its articles, especially for the lucid dreaming novices.\n\n" +
-                "Exploring the World of Lucid Dreaming\n" +
-                "amazon.com/Exploring-World-Dreaming-Stephen-LaBerge/dp/034537410X\n" +
-                "This is a book written by Stephen LaBerge, a scientist and researcher with PhD from Stanford University, in 1990.\n" +
-                "As this book can be considered the Bible of lucid dreaming, simply reading this book everyday can get its readers into the mindset of lucid dreaming.\n" +
-                "I strongly recommend this book to all lucid dreamers!";
+                "Therefore, I personally recommend reading its articles, especially for the lucid dreaming novices.";
         contentTextView.setText(content);
 
         backTextView.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +60,6 @@ public class ResourcesActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         App.currActivity = "Main";
-        startActivity(new Intent(ResourcesActivity.this, MainActivity.class));
+        finish();
     }
 }

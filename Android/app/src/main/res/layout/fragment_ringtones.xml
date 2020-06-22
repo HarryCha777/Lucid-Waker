@@ -72,6 +72,46 @@
                 android:textSize="26dp" />
 
             <RadioButton
+                android:id="@+id/newBeginningRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="New Beginning"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/summerRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Summer"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/ukuleleRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Ukulele"
+                android:textSize="26dp" />
+
+            <RadioButton
+                android:id="@+id/rumbleRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Rumble"
+                android:textSize="26dp" />
+
+            <RadioButton
                 android:id="@+id/fadeRadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

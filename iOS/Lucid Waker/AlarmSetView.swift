@@ -14,29 +14,15 @@ import UserNotifications
 struct AlarmSetView: View {
     @EnvironmentObject var settings: Settings
     @Environment(\.managedObjectContext) var moc
-
+    
     @State private var setHour = 0
     @State private var setMin = 0
     @State private var period = ""
     
-    @State private var showRequestOnOpening = false
-    @State private var showRequestOnYes = false
-    @State private var showRequestOnNo = false
-    
-    @State private var requestOnOpeningTitle = "Just a moment please!"
-    @State private var requestOnOpeningMessage = "Does Lucid Waker help you lucid dream?"
-    @State private var requestOnYesTitle = "I am super glad to hear that.   :)"
-    @State private var requestOnYesMessage = "Would you mind rating this app on App Store?"
-    @State private var requestOnNoTitle = "I am so sorry to hear that.   :("
-    @State private var requestOnNoMessage = "Would you mind providing feedback so that I can improve this app for you?"
-    
-    @State private var requestOnOpeningSayYes = "Yes, it does!"
-    @State private var requestOnOpeningSayNo = "Not really."
-    @State private var requestAfterOpeningSayYes = "Sure, take me there!"
-    @State private var requestAfterOpeningSayNo = "No, don't ask again."
-
     var body: some View {
         VStack {
+            Spacer()
+                .frame(height: 50)
             Text(settings.modeList[settings.modeIndex])
                 .font(.system(size: 40))
             Spacer()
@@ -56,8 +42,6 @@ struct AlarmSetView: View {
                 
                 self.settings.isAlarmSet = false
                 self.settings.isAlarmScheduled = false
-                self.saveCoreData()
-                ContentView().environmentObject(self.settings)
             }) {
                 Text("Cancel")
             }
@@ -69,36 +53,6 @@ struct AlarmSetView: View {
             
             Spacer()
                 .frame(height: 30)
-            
-            // request review alerts
-            HStack {
-                Spacer()
-                    .alert(isPresented: $showRequestOnOpening) {
-                        Alert(title: Text(requestOnOpeningTitle), message: Text(requestOnOpeningMessage), primaryButton: .destructive(Text(requestOnOpeningSayNo), action: {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // very short delay is needed
-                                self.showRequestOnNo = true
-                            }
-                        }), secondaryButton: .default(Text(requestOnOpeningSayYes), action: {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // very short delay is needed
-                                self.showRequestOnYes = true
-                            }
-                        }))
-                    }
-                
-                Spacer()
-                    .alert(isPresented: $showRequestOnYes) {
-                        Alert(title: Text(requestOnYesTitle), message: Text(requestOnYesMessage), primaryButton: .default(Text(requestAfterOpeningSayYes)), secondaryButton: .destructive(Text(requestAfterOpeningSayNo), action: {
-                            // link to app
-                        }))
-                    }
-                
-                Spacer()
-                    .alert(isPresented: $showRequestOnNo) {
-                        Alert(title: Text(requestOnNoTitle), message: Text(requestOnNoMessage), primaryButton: .default(Text(requestAfterOpeningSayYes)), secondaryButton: .destructive(Text(requestAfterOpeningSayNo), action: {
-                            // link to app
-                        }))
-                    }
-            }
         }
         .onAppear {
             if !self.settings.isAlarmScheduled {
@@ -107,8 +61,6 @@ struct AlarmSetView: View {
             if !self.settings.timeLeftUpdating {
                 self.settings.startUpdatingTimeLeft()
             }
-            self.saveCoreData()
-            self.checkRatePopUp()
         }
     }
     
@@ -257,54 +209,6 @@ struct AlarmSetView: View {
         
         let waitTime = settings.waitList[waitIndex].prefix(spaceIndex)
         return Int(waitTime)!
-    }
-    
-    func checkRatePopUp() {
-        // if it's fisrt time asking for review, alarm has been set 4 or more times, and it's been 3 or more days since first launch
-        if !self.settings.requestedReview
-            && self.settings.alarmSetCounter >= 4
-            && Date().timeIntervalSince(self.settings.firstLaunchDate) > 60 * 60 * 24 * 3 {
-            
-            self.settings.requestedReview = true
-            self.saveCoreData()
-            
-            self.showRequestOnOpening = true
-        }
-    }
-    
-    func saveCoreData() {
-        deleteAllCoreData()
-        
-        let settingsEntity = SettingsEntity(context: self.moc)
-        settingsEntity.alarmDate = self.settings.alarmDate
-        settingsEntity.alarmSetCounter = Int16(self.settings.alarmSetCounter + 1)
-        settingsEntity.autoOffIndex1 = Int16(self.settings.autoOffIndex1)
-        settingsEntity.autoOffIndex2 = Int16(self.settings.autoOffIndex2)
-        settingsEntity.firstLaunchDate = self.settings.firstLaunchDate
-        settingsEntity.isAlarmScheduled = self.settings.isAlarmScheduled
-        settingsEntity.isAlarmSet = self.settings.isAlarmSet
-        settingsEntity.modeIndex = Int16(self.settings.modeIndex)
-        settingsEntity.requestedReview = self.settings.requestedReview
-        settingsEntity.soundIndex1 = Int16(self.settings.soundIndex1)
-        settingsEntity.soundIndex2 = Int16(self.settings.soundIndex2)
-        settingsEntity.waitIndexForChaining = Int16(self.settings.waitIndexForChaining)
-        settingsEntity.waitIndexForRausis = Int16(self.settings.waitIndexForRausis)
-        try? self.moc.save()
-    }
-    
-    func deleteAllCoreData() {
-        let appDel : AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
-        let context : NSManagedObjectContext = appDel.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SettingsEntity")
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        let results = try? context.fetch(fetchRequest)
-        for managedObject in results! {
-            if let managedObjectData: NSManagedObject = managedObject as? NSManagedObject {
-                context.delete(managedObjectData)
-            }
-        }
-        try? self.moc.save()
     }
 }
 
